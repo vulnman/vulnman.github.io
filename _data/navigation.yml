@@ -1,0 +1,33 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Documentation"
+    url: /docs/
+  - title: "Posts"
+    url: /year-archive/
+
+
+# documentation links
+docs:
+  - title: Getting Started
+    children:
+      - title: "Installation"
+        url: /docs/getting-started/install/
+      - title: "Configuration"
+        url: /docs/getting-started/configuration/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Upgrading"
+        url: /docs/upgrading/
+  - title: User-Guide
+    children:
+      - title: "Permissions and Groups"
+        url: /docs/user-guide/permissions
+  - title: Developer Documentation
+    children:
+      - title: "Vulnerability Templates"
+        url: /docs/developer/contribute-vulnerability-templates/
+      - title: "Checklists"
+        url: /docs/developer/contribute-checklists/
+
