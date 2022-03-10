@@ -7,7 +7,7 @@ header:
   overlay_image: /assets/images/mm-home-page-feature.jpg
   actions:
     - label: "<i class='fas fa-download'></i> Install now"
-      url: "/docs/getting-started/install/"
+      url: "/docs/getting-started/install"
 excerpt: >
   A simple pentest and vulnerability management application.<br />
   <small><a href="https://github.com/vulnman/vulnman/releases/tag/0.3.0">Latest release v0.3.0</a></small>
