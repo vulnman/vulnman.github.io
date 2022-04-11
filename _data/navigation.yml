@@ -16,18 +16,19 @@ docs:
         url: /docs/getting-started/install
       - title: "Configuration"
         url: /docs/getting-started/configuration
-      - title: "Structure"
-        url: /docs/structure
       - title: "Upgrading"
         url: /docs/upgrading
   - title: User-Guide
     children:
-      - title: "Permissions and Groups"
+      - title: "Components and Glossary"
+        url: /docs/user-guide/glossary
+      - title: "Permissions"
         url: /docs/user-guide/permissions
+      - title: "Create Your First Project"
+        url: /docs/user-guide/your-first-project
   - title: Developer Documentation
     children:
       - title: "Vulnerability Templates"
         url: /docs/developer/contribute-vulnerability-templates
       - title: "Checklists"
         url: /docs/developer/contribute-checklists
-

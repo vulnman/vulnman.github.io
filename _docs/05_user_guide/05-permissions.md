@@ -15,3 +15,5 @@ The management is allowed to create and update projects.
 `pentester`
 :   The members of the pentester group can be added to different projects.
 This will add permissions to the user to change, delete and view the project and its assets.
+Pentesters do not have permissions to add contributors to projects.
+Editing clients is forbidden too.
