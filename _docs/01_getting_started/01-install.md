@@ -115,10 +115,14 @@ After you have installed vulnman you may want to import the default vulnerabilit
 
 ### Import Vulnerability Templates
 ```bash
-python manage.py import_vulnerability_templates
+python manage.py update_vulnerability_templates
 ```
+
+*Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.*
 
 ### Import Checklists
 ```bash
-python manage.py import_checklists
+python manage.py update_checklists
 ```
+
+*Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.*
