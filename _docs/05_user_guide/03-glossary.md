@@ -36,7 +36,7 @@ The following assets are supported:
 A draft report contains a *draft* watermark, while *release* versions does not.
 You can store multiple versions of your report.
 
-- **Vulnerability Templates:** Vulnerability templates are [managed](/docs/developer/contribute-vulnerability-templates) using a separate repository.
+- **Vulnerability Templates:** Vulnerability templates are managed using a [separate repository](/docs/developer/contribute-vulnerability-templates).
 This allows other external tools to introduce these templates too.
 These templates are used to derive basic information for your found vulnerabilities.
 

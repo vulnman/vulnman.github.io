@@ -33,7 +33,7 @@ You should **not** use it in production, because there may be breaking changes i
    - Hosts
    - Web Applications
    - Web Requests
-   - Services (coming soon)
+   - Services
 
 ## Source Code
 All source code is available on [Github](https://github.com/vulnman).
