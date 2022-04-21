@@ -15,14 +15,14 @@ feature_row:
   - image_path: /assets/images/mm-customizable-feature.png
     alt: "customizable"
     title: "Customizable"
-    excerpt: "Customize vulnman to your needs. Report templates, checklists and vulnerability templates and more."
+    excerpt: "Customize things like report templates, checklists and vulnerability templates to make vulnman completly yours."
     url: "/docs/configuration"
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/images/mm-responsive-feature.png
     alt: "Vulnerability Management"
     title: "Reports"
-    excerpt: "Easily create PDF reports for your customers with charts, images and steps to reproduce a vulnerability."
+    excerpt: "Easily create PDF reports for your customers with charts, management summary and technical details."
     url: "/docs/layouts"
     btn_class: "btn--primary"
     btn_label: "Learn more"
@@ -30,7 +30,7 @@ feature_row:
     alt: "100% free"
     title: "100% free"
     excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
-    url: "/docs/license"
+    url: "https://github.com/vulnman/vulnman/blob/main/LICENSE"
     btn_class: "btn--primary"
     btn_label: "Learn more"
 ---
