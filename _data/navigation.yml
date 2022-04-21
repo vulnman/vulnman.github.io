@@ -24,8 +24,12 @@ docs:
         url: /docs/user-guide/glossary
       - title: "Permissions"
         url: /docs/user-guide/permissions
+      - title: "Introducing the Web Interface"
+        url: /docs/user-guide/intro-web-interface
       - title: "Create Your First Project"
         url: /docs/user-guide/your-first-project
+      - title: "Use the Vulnman Scanner"
+        url: /docs/user-guide/vulnman-scanner
   - title: Developer Documentation
     children:
       - title: "Vulnerability Templates"
