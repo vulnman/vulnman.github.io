@@ -29,8 +29,8 @@ First we fetch the source code.
 ```bash
 mkdir /opt/vulnman-server
 git clone https://github.com/vulnman/vulnman.git
-cd /opt/vulnman-server
-git submodule update --init --recursive
+cd /opt/vulnman-server/vulnman
+cp local_settings.template.py local_settings.py
 ```
 
 
@@ -40,7 +40,9 @@ If you are fine with this you can continue with this tutorial.
 Otherwise, you may want to read how to [configure](/docs/getting-started/configuration) your installation.
 
 
-### Initializing Database
+### Initializing Vulnman
+In the next step, we need to initialize vulnman.
+
 ```bash
 python manage.py migrate
 python manage.py collectstatic
@@ -101,6 +103,34 @@ Adjust the credentials and paths in the `docker-compose.yml` file.
 
 For the docker image to work, you need to set up vulnman to use a [postgres database](/docs/getting-started/configuration#postgresql).
 
+To make the report generation work, add the following lines to your `local_settings.py` file:
+
+```
+CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "redis://redis:6379"
+```
+
+A basic settings example for the docker setup is shown below:
+
+```
+CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "redis://redis:6379"
+
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'HOST': 'db',
+    'NAME': 'vulnman',
+    'USER': 'vulnman_db_user',
+    'PASSWORD': 'dontusethispassword',
+  }
+}
+
+ALLOWED_HOSTS = ["vulnman-web"]
+# Add your host and schema here: ["https://mydomain.com", "http://mydomain.com"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost", "https://localhost"]
+```
 
 
 You can start all containers with the following command:
