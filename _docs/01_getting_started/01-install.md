@@ -99,7 +99,7 @@ server {
 
 ## With docker-compose
 
-Adjust the credentials and paths in the `docker-compose.yml` file.
+Adjust the credentials and paths in the [docker-compose.yml](https://github.com/vulnman/vulnman/blob/main/docker-compose.yml) file.
 
 For the docker image to work, you need to set up vulnman to use a [postgres database](/docs/getting-started/configuration#postgresql).
 
@@ -132,11 +132,12 @@ ALLOWED_HOSTS = ["vulnman-web"]
 CSRF_TRUSTED_ORIGINS = ["http://localhost", "https://localhost"]
 ```
 
+An example nginx config file can be found [here](https://github.com/vulnman/vulnman/blob/main/docker/nginx.conf).
 
 You can start all containers with the following command:
 
 ```bash
-sudo docker-compose up --build
+sudo docker-compose up
 ```
 
 
