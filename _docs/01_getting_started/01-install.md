@@ -103,11 +103,10 @@ Adjust the credentials and paths in the [docker-compose.yml](https://github.com/
 
 For the docker image to work, you need to set up vulnman to use a [postgres database](/docs/getting-started/configuration#postgresql).
 
-To make the report generation work, add the following lines to your `local_settings.py` file:
+To make the report generation work, add the following line to your `local_settings.py` file:
 
 ```
 CELERY_BROKER_URL = "redis://redis:6379"
-CELERY_RESULT_BACKEND = "redis://redis:6379"
 ```
 
 A basic settings example for the docker setup is shown below:
