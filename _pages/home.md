@@ -10,7 +10,7 @@ header:
       url: "/docs/getting-started/install"
 excerpt: >
   A simple pentest and vulnerability management application.<br />
-  <small><a href="https://github.com/vulnman/vulnman/releases/tag/v0.3.0-rc1">Latest release v0.3.0-rc1</a></small>
+  <small><a href="https://github.com/vulnman/vulnman/releases/tag/v0.3.0-rc2">Latest release v0.3.0-rc2</a></small>
 feature_row:
   - image_path: /assets/images/mm-customizable-feature.png
     alt: "customizable"
