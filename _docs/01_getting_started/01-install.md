@@ -97,7 +97,27 @@ server {
 }
 ```
 
-## With docker-compose
+
+
+### Checklists and Vulnerability Templates
+After you have installed vulnman you may want to import the default vulnerability templates and checklist.
+
+#### Import Vulnerability Templates
+```bash
+python manage.py update_vulnerability_templates
+```
+
+*Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.*
+
+#### Import Checklists
+```bash
+python manage.py update_checklists
+```
+
+*Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.*
+
+
+## With Docker
 
 Adjust the credentials and paths in the [docker-compose.yml](https://github.com/vulnman/vulnman/blob/main/docker-compose.yml) file.
 
@@ -137,21 +157,3 @@ You can start all containers with the following command:
 ```bash
 sudo docker-compose up
 ```
-
-
-## Initial Setup
-After you have installed vulnman you may want to import the default vulnerability templates and checklist.
-
-### Import Vulnerability Templates
-```bash
-python manage.py update_vulnerability_templates
-```
-
-*Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.*
-
-### Import Checklists
-```bash
-python manage.py update_checklists
-```
-
-*Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.*
