@@ -1,0 +1,59 @@
+// Custom - Fonts
+
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/webfonts/Nunito-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nunito Italic';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/webfonts/Nunito-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nunito Bold';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/webfonts/Nunito-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nunito Bold Italic';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/webfonts/Nunito-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nunito Extra Bold';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/webfonts/Nunito-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nunito Medium';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/webfonts/Nunito-Medium.ttf') format('truetype');
+}
+
+$base-font-family: "Nunito", Arial, sans-serif;
+$base-font-family-italic: "Nunito Italic", Arial, sans-serif;
+$base-font-family-bold: "Nunito Bold", Arial, sans-serif;
+$base-font-family-bold-italic: "Nunito Bold Italic", Arial, sans-serif;
+$base-font-size:   1rem;
+$small-font-size:  $base-font-size * 0.85;
+$base-line-height: 1.6em;
+$font-ostrich: "Nunito Medium";
+$font-ostrich-heavy: "Nunito Extra Bold";
+$ostrich: "Nunito Medium", Arial, sans-serif;
+$ostrich-heavy: "Nunito Extra Bold", Arial, sans-serif;
+$open-sans: "Nunito", Arial, sans-serif;
+$open-sans-italic: "Nunito Italic", Arial, sans-serif;
+$open-sans-bold: "Nunito Bold", Arial, sans-serif;
+$open-sans-bold-italic: "Nunito Bold Italic", Arial, sans-serif;

@@ -1,0 +1,29 @@
+@import "fonts";
+
+
+
+#landing-page-cover-container {
+  h1 {
+    font-size: 125px;
+    font-weight: 200;
+    font-family: $ostrich;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+  }
+
+  h1 strong {
+    font-family: $ostrich-heavy;
+    color: $gray-400;
+  }
+
+  h1 small {
+    display: block;
+    font-family: $ostrich-heavy;
+    font-size: 30px;
+    color: $gray-600;
+  }
+
+  #button-group {
+    margin-top: 70px;
+  }
+}
