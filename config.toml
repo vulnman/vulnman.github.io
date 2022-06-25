@@ -1,4 +1,4 @@
-baseURL = "https://vulnman.github.io"
+baseURL = "https://vulnman.github.io/"
 title = "Vulnman Project"
 
 # Language settings
