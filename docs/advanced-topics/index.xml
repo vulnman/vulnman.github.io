@@ -1,0 +1,109 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – Advanced Topics</title><link>https://vulnman.github.io/docs/advanced-topics/</link><description>Recent content in Advanced Topics on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/docs/advanced-topics/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: LDAP Authentication</title><link>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</guid><description>
+&lt;p>In the first step, you need to install &lt;code>django-auth-ldap&lt;/code>.
+This can be done with pip.&lt;/p>
+&lt;pre>&lt;code>pip install django-auth-ldap
+&lt;/code>&lt;/pre>&lt;h2 id="settings">Settings&lt;/h2>
+&lt;p>Add the following lines to your &lt;a href="https://vulnman.github.io/docs/getting-started/configuration">local_settings.py&lt;/a> file.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># LDAP&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># You need to install `django-auth-ldap` to use LDAP authentication&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># See https://django-auth-ldap.readthedocs.io/en/latest/install.html for library usage&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">ldap&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">django_auth_ldap.config&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_BIND_DN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cn=admin,dc=example,dc=org&amp;#34;&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_BIND_PASSWORD&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;admin&amp;#34;&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_USER_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;ou=Users,dc=example,dc=org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(uid=&lt;/span>&lt;span style="color:#4e9a06">%(user)s&lt;/span>&lt;span style="color:#4e9a06">)&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_FIND_GROUP_PERMS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#3465a4">True&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_CACHE_TIMEOUT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_SERVER_URI&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ldap://172.17.0.2&amp;#34;&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_GROUP_TYPE&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">name_attr&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;cn&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_GROUP_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;ou=Groups,dc=example,dc=org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;(objectClass=posixGroup)&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_USER_ATTR_MAP&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;first_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;givenName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;last_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;sn&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;mail&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Permissions in Vulnman</title><link>https://vulnman.github.io/docs/advanced-topics/permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/permissions/</guid><description>
+&lt;div class="alert alert-warning">
+&lt;strong>Note:&lt;/strong> This is work in progress
+For example, the "Management" group does not yet have a independed UI.
+Permissions may not be enforced everywhere at the moment!
+&lt;/div>
+&lt;p>Vulnman comes with the following default groups and permission levels:
+l&lt;/p>
+&lt;h2 id="groups">Groups&lt;/h2>
+&lt;dl>
+&lt;dt>&lt;code>Management&lt;/code>&lt;/dt>
+&lt;dd>The management group members are allowed to list projects and clients.
+The management is allowed to create and update projects.&lt;/dd>
+&lt;dt>&lt;code>Pentesters&lt;/code>&lt;/dt>
+&lt;dd>The members of the pentester group can be added to different projects.
+This will add permissions to the user to change, delete and view the project and its assets.
+Pentesters do not have permissions to add contributors to projects (except of the project creator).
+Editing clients is forbidden too.&lt;/dd>
+&lt;/dl>
+&lt;h2 id="project-contributor-roles">Project Contributor Roles&lt;/h2>
+&lt;p>If a new contributor is added to a project the following roles are available.&lt;/p>
+&lt;dl>
+&lt;dt>&lt;code>Read Only&lt;/code>&lt;/dt>
+&lt;dd>Contributors of this role are not allowed to change assets or other stuff belonging to the project.&lt;/dd>
+&lt;dt>&lt;code>Pentester&lt;/code>&lt;/dt>
+&lt;dd>Pentesters are allowed to edit project related objects.&lt;/dd>
+&lt;/dl></description></item><item><title>Docs: Checklists</title><link>https://vulnman.github.io/docs/advanced-topics/checklists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/checklists/</guid><description>
+&lt;p>Vulnman provides a simple task management application.
+The tasks can be imported from files and are created depending on which assets you test.&lt;/p>
+&lt;p>Since my current focus is on the core modules, the current checklists are minimalistic and really incomplete.&lt;/p>
+&lt;p>Feel free to contribute new checklists or improve existing ones.&lt;/p>
+&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
+&lt;h2 id="structure-of-checklists">Structure of Checklists&lt;/h2>
+&lt;p>First of all, the default &lt;em>community checklists&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-checklists">here&lt;/a>.&lt;/p>
+&lt;p>There are 2 required files for a checklist:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the checklist&lt;/li>
+&lt;li>&lt;strong>ReadMe.md&lt;/strong>: A description of the test that should be performed. You may want to provide background information.&lt;/li>
+&lt;/ul>
+&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">sql-injection&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">SQL-Injection&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">conditions&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">http&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">80&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">443&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">webapplication.always&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>id&lt;/code> key needs to be unique, while the &lt;code>name&lt;/code> is just used for display purposes.
+The conditions are used to create the task based on different asset attributes.&lt;/p>
+&lt;p>In the example above, the &lt;code>sql-injection&lt;/code> task is created, if a service with a name of &amp;ldquo;http&amp;rdquo; or &amp;ldquo;https&amp;rdquo;.
+Also if the service port is either 80 or 443.
+You can use the keyword &lt;code>always&lt;/code> to create the task independently of the asset attribute.&lt;/p></description></item><item><title>Docs: Vulnerability Templates</title><link>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</guid><description>
+&lt;p>The Vulnman server relies on the existing vulnerability templates.&lt;/p>
+&lt;p>Since my current focus is on the core modules, the current templates are minimalistic and rather unsuitable for meaningful reports.&lt;/p>
+&lt;p>Feel free to contribute new vulnerability templates or improve existing ones.&lt;/p>
+&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
+&lt;h2 id="structure-of-vulnerability-templates">Structure of Vulnerability Templates&lt;/h2>
+&lt;p>First of all, the default &lt;em>community vulnerability templates&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-vulnerability-templates">here&lt;/a>.&lt;/p>
+&lt;p>There are 3 required files for a vulnerability template:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the template&lt;/li>
+&lt;li>&lt;strong>description_en.md&lt;/strong>: A description of the vulnerability written in markdown syntax&lt;/li>
+&lt;li>&lt;strong>resolution_en.md&lt;/strong>: A recommendation of how the vulnerability can be fixed. Also supports markdown syntax.&lt;/li>
+&lt;/ul>
+&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">- &lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">cross-site-scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">severity&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">critical&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">references&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#4e9a06">&amp;#34;https://owasp.org/www-community/attacks/xss/&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">cwe&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">CWE-79&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">input-validation&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-info">
+Available categories can be found in the &lt;a href="https://github.com/vulnman/community-vulnerability-templates/blob/main/templates/categories.yaml">categories.yaml&lt;/a> file
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,409 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – Documentation</title><link>https://vulnman.github.io/docs/</link><description>Recent content in Documentation on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction</title><link>https://vulnman.github.io/docs/getting-started/intro/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/intro/</guid><description>
+&lt;div class="alert alert-warning">
+&lt;i class="fa fa-warning">&lt;/i>
+Vulnman is in a really early stage of development. Feel free to use, test it and please report bugs and other ideas.
+You should &lt;b>not&lt;/b> use it in production, because there may be breaking changes in the database schema.
+&lt;/div>
+&lt;h2>What is Vulnman?&lt;/h2>
+&lt;a id = "what-is-vulnman">&lt;/a>
+&lt;div class="row">
+&lt;div class="col-lg-12 col-md-12">
+&lt;p>
+Vulnman is a free and open-source pentest management and collaboration software.
+Manage your pentest projects and their related assets using the Vulnman web interface.
+Vulnman comes with a simple to use report generator.
+This allows the pentesters to focus on finding vulnerabilities.
+&lt;/p>
+&lt;p>
+It is built using the powerful &lt;a href="https://www.djangoproject.com/" rel="noopener noreferrer">Django Framework&lt;/a>.
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2 class="more-bottom">Features&lt;/h2>
+&lt;div class="row">
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Unlimited Users and Projects&lt;/h3>
+&lt;p>
+Despite other solutions, vulnman does not limit the amount of users or projects.
+&lt;/p>
+&lt;/div>
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Report Generator&lt;/h3>
+&lt;p>
+Vulnman contains a simple to use pentest report generator.
+&lt;/p>
+&lt;/div>
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Customizable&lt;/h3>
+&lt;p>
+Vulnman can be customized at multiple places. Some of them are:
+&lt;a href="https://vulnman.github.io/doc/customize/report-template">Report Template&lt;/a>,
+&lt;a href="https://vulnman.github.io/doc/vulnerability-templates">Vulnerability Templates&lt;/a>,
+&lt;a href="https://vulnman.github.io/doc/checklists">Checklists&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;hr>
+&lt;div class="row">
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Markdown Syntax&lt;/h3>
+&lt;p>
+Vulnman allows you to write your texts in markdown (mostly).
+&lt;/p>
+&lt;/div>
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Vulnerability Management&lt;/h3>
+&lt;p>
+Vulnman includes simple features to manage vulnerabilities of your projects.
+This includes &lt;a href="https://vulnman.github.io/doc/vulnerability-templates">Vulnerability Templates&lt;/a>
+and CVSS scoring.
+&lt;/p>
+&lt;/div>
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Checklists and To Dos&lt;/h3>
+&lt;p>
+Track your tasks during the pentest.
+Did you already check for SQL-Injection?
+Never miss a check anymore!
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2>More information&lt;/h2>
+&lt;p>
+This page is just a brief introduction to what Vulnman is all about, and many
+technical details have been omitted here for the sake of presentation.
+&lt;ul>
+&lt;li>
+If you're a current or potential Vulnman user, you may want to check out the
+&lt;a href="https://vulnman.github.io/doc/">documentation&lt;/a>.
+&lt;/li>
+&lt;li>
+If you're a developer, there's dedicated
+&lt;a href="https://vulnman.github.io/doc/#developer-documentation">developer documentation&lt;/a>.
+&lt;/li>
+&lt;li>
+Need help, or just want to join the conversation? Learn more about
+&lt;a href="https://vulnman.github.io/support/">help, support, the mailing lists, and the forum&lt;/a>.
+&lt;/li>
+&lt;/ul>
+&lt;/p></description></item><item><title>Docs: Introducing the Web Interface</title><link>https://vulnman.github.io/docs/user-guide/introducing-webui/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/introducing-webui/</guid><description>
+&lt;p>The web interface allows you to manage your pentest and its assets using a user interface.&lt;/p>
+&lt;p>You can visit the vulnman server by opening your instance from within your browser.
+The application needs you to be logged in.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/login-web-ui.png" alt="Login Screen">&lt;/p>
+&lt;p>After you logged in, you will be redirected to the list of your current (non archived) projects.
+By clicking on one of the projects, you are able to &lt;em>activate&lt;/em> the project and see its details and do your work.&lt;/p>
+&lt;h2 id="project-dashboard">Project Dashboard&lt;/h2>
+&lt;p>The project dashboard is the home of your project.
+It gives you a short overview about the state of your project.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/web_dashboard.png" alt="Dashboard">&lt;/p>
+&lt;p>It contains the remaining time for the project, different counts like how many vulnerabilities were found and open to dos are left.&lt;/p>
+&lt;p>You can close the project through the &lt;code>X&lt;/code> button.
+Closing a project makes it read-only.&lt;/p>
+&lt;p>If for some reasons you forgot your role in the project, you can found it here - in the top left of the dashboard.&lt;/p>
+&lt;p>A sidebar will be available with project related actions.&lt;/p>
+&lt;h2 id="the-sidebar">The Sidebar&lt;/h2>
+&lt;p>The sidebar only contains project related links, while the top bar include &lt;em>global&lt;/em> links.
+The sidebar is devided into different &lt;em>categories&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Pentest:&lt;/strong>&lt;/p>
+&lt;p>The pentest group contains links to your project&amp;rsquo;s dashboard, vulnerabilities, tasks, user accounts and project tokens.&lt;/p>
+&lt;p>&lt;strong>Assets:&lt;/strong>&lt;/p>
+&lt;p>In this group you can create and manage your assets.&lt;/p>
+&lt;p>&lt;strong>Management:&lt;/strong>&lt;/p>
+&lt;p>This group handels links to manage the project. Currently there is just one item in here, which allows you to add or remove contributors.
+It is important to know, that you need permissions to do so. By default, the project creator user will be able to remove or add contributors.&lt;/p>
+&lt;p>&lt;strong>Reporting:&lt;/strong>&lt;/p>
+&lt;p>Here you can create new reports or download existing one.
+You can write the management summary here.&lt;/p>
+&lt;h2 id="reporting">Reporting&lt;/h2>
+&lt;p>This page allows you to manage your project&amp;rsquo;s reports.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/reporting-ui.png" alt="Report Management Page">&lt;/p>
+&lt;p>A general draft report can be created. This report will not have a named, unchangable version.
+If you click on the &lt;code>Create Draft&lt;/code> button, it will create, and overwrite the previous, report.&lt;/p>
+&lt;p>If you need a new persisted version of your reports, you must click on &lt;code>Create Report&lt;/code>.
+This will open a new window, where you can choose between the report types &amp;ldquo;Release&amp;rdquo; and &amp;ldquo;Draft&amp;rdquo;.
+This version will not be overwritten by other reports.&lt;/p>
+&lt;p>The management summary fields &lt;code>Evaluation&lt;/code> and &lt;code>Recommendation&lt;/code> supports markdown syntax.
+If your cursor leaves the focus of the field, the data is saved into the database and will appear in your next reports.&lt;/p></description></item><item><title>Docs: Install Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</guid><description>
+&lt;div class="alert alert-warning">
+&lt;i class="fa fa-warning">&lt;/i>
+Vulnman is in a really early stage of development. Feel free to use, test it and please report bugs and other ideas.
+You should &lt;b>not&lt;/b> use it in production, because there may be breaking changes in the database schema.
+&lt;/div>
+&lt;p>Welcome to the vulnman installation guide! This guide will walk you through
+the process of installing vulnman.&lt;/p>
+&lt;h2 id="without-docker">Without Docker&lt;/h2>
+&lt;h3 id="requirements">Requirements&lt;/h3>
+&lt;h4 id="fedora">Fedora&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dnf install python3 nginx git
+sudo pip install -r requirements.txt
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="arch-linux">Arch-Linux&lt;/h4>
+&lt;pre>&lt;code>sudo pacman -Sy python nginx git
+sudo pip install -r requirements.txt
+&lt;/code>&lt;/pre>&lt;h3 id="prepare">Prepare&lt;/h3>
+&lt;p>First we fetch the source code.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir /opt/vulnman-server
+git clone https://github.com/vulnman/vulnman.git
+&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman-server/vulnman
+cp local_settings.template.py local_settings.py
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-database">Configure Database&lt;/h3>
+&lt;p>The default settings will use a sqlite database.
+If you are fine with this you can continue with this tutorial.
+Otherwise, you may want to read how to &lt;a href="https://vulnman.github.io/doc/server/databases/">configure&lt;/a> your installation.&lt;/p>
+&lt;h3 id="initializing-vulnman">Initializing Vulnman&lt;/h3>
+&lt;p>In the next step, we need to initialize vulnman.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py migrate
+python manage.py collectstatic
+python manage.py createupseruser
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="systemd-service">Systemd Service&lt;/h3>
+&lt;p>If you want to run the vulnman-server using systemd, you can paste the following
+content into the &lt;code>/etc/systemd/system/vulnman-server.service&lt;/code> file.&lt;/p>
+&lt;pre>&lt;code>[Unit]
+Description=vulnman server
+After=network.target
+[Service]
+User=user
+Group=user
+WorkingDirectory=/opt/vulnman-server
+ExecStart=gunicorn --bind 127.0.0.1:8000 vulnman.wsgi
+[Install]
+WantedBy=multi-user.target
+&lt;/code>&lt;/pre>&lt;p>To enable the service on boot and start the vulnman service, you can use the following commands:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo systemctl start vulnman-server
+sudo systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="setup-nginx">Setup Nginx&lt;/h3>
+&lt;p>Paste the following content into the &lt;code>/etc/nginx/sites-enabled/vulnman.conf&lt;/code> file&lt;/p>
+&lt;pre>&lt;code>server {
+listen 80;
+return https://$host$request_uri;
+}
+server {
+listen 443 ssl;
+ssl_certificate_key /etc/ssl/your_cert.key;
+ssl_certificate /etc/ssl/your_cert.crt;
+ssl_protocols TLSv1.3;
+location / {
+proxy_pass http://127.0.0.1:8000;
+}
+}
+&lt;/code>&lt;/pre>&lt;h3 id="checklists-and-vulnerability-templates">Checklists and Vulnerability Templates&lt;/h3>
+&lt;p>After you have installed vulnman you may want to import the default vulnerability templates and checklist.&lt;/p>
+&lt;h4 id="import-vulnerability-templates">Import Vulnerability Templates&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py update_vulnerability_templates
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.&lt;/em>&lt;/p>
+&lt;h4 id="import-checklists">Import Checklists&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py update_checklists
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.&lt;/em>&lt;/p>
+&lt;h2 id="with-docker">With Docker&lt;/h2>
+&lt;p>Adjust the credentials and paths in the &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker-compose.yml">docker-compose.yml&lt;/a> file.&lt;/p>
+&lt;p>For the docker image to work, you need to set up vulnman to use a &lt;a href="https://vulnman.github.io/doc/server/databases#postgresql">postgres database&lt;/a>.&lt;/p>
+&lt;p>To make the report generation work, add the following line to your &lt;code>local_settings.py&lt;/code> file:&lt;/p>
+&lt;pre>&lt;code>CELERY_BROKER_URL = &amp;quot;redis://redis:6379&amp;quot;
+&lt;/code>&lt;/pre>&lt;p>A basic settings example for the docker setup is shown below:&lt;/p>
+&lt;pre>&lt;code>CELERY_BROKER_URL = &amp;quot;redis://redis:6379&amp;quot;
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.postgresql',
+'HOST': 'db',
+'NAME': 'vulnman',
+'USER': 'vulnman_db_user',
+'PASSWORD': 'dontusethispassword',
+}
+}
+ALLOWED_HOSTS = [&amp;quot;vulnman-web&amp;quot;]
+# Add your host and schema here: [&amp;quot;https://mydomain.com&amp;quot;, &amp;quot;http://mydomain.com&amp;quot;]
+CSRF_TRUSTED_ORIGINS = [&amp;quot;http://localhost&amp;quot;, &amp;quot;https://localhost&amp;quot;]
+&lt;/code>&lt;/pre>&lt;p>An example nginx config file can be found &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker/nginx.conf">here&lt;/a>.&lt;/p>
+&lt;p>You can start all containers with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LDAP Authentication</title><link>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</guid><description>
+&lt;p>In the first step, you need to install &lt;code>django-auth-ldap&lt;/code>.
+This can be done with pip.&lt;/p>
+&lt;pre>&lt;code>pip install django-auth-ldap
+&lt;/code>&lt;/pre>&lt;h2 id="settings">Settings&lt;/h2>
+&lt;p>Add the following lines to your &lt;a href="https://vulnman.github.io/docs/getting-started/configuration">local_settings.py&lt;/a> file.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># LDAP&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># You need to install `django-auth-ldap` to use LDAP authentication&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># See https://django-auth-ldap.readthedocs.io/en/latest/install.html for library usage&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">ldap&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">django_auth_ldap.config&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_BIND_DN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cn=admin,dc=example,dc=org&amp;#34;&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_BIND_PASSWORD&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;admin&amp;#34;&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_USER_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;ou=Users,dc=example,dc=org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(uid=&lt;/span>&lt;span style="color:#4e9a06">%(user)s&lt;/span>&lt;span style="color:#4e9a06">)&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_FIND_GROUP_PERMS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#3465a4">True&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_CACHE_TIMEOUT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_SERVER_URI&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ldap://172.17.0.2&amp;#34;&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_GROUP_TYPE&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">name_attr&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;cn&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_GROUP_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;ou=Groups,dc=example,dc=org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;(objectClass=posixGroup)&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">AUTH_LDAP_USER_ATTR_MAP&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;first_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;givenName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;last_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;sn&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;mail&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/glossary/responsible-disclosure-app/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/glossary/responsible-disclosure-app/</guid><description>
+&lt;p>To Be Done&lt;/p></description></item><item><title>Docs: Using The Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</guid><description>
+&lt;div class="alert alert-info">
+Your instance must have the responsible disclosure application feature enabled, otherwise it will not be accessible for you.
+&lt;/div>
+&lt;h2 id="vulnerability-listing">Vulnerability Listing&lt;/h2>
+&lt;p>Visiting the &lt;a href="https://vulnman.github.io/docs/glossary/responsible-disclosure-app">Responsible Disclosure Application&lt;/a> opens up your list of vulnerabilities.&lt;/p>
+&lt;p>This list contains all vulnerabilities that you have created or that have been shared with you.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-vuln-list.png" alt="Vulnerability List">&lt;/p>
+&lt;p>The default view is to show only open findings, while you can easily view closed ones by clicking the corresponding button.&lt;/p>
+&lt;h2 id="vulnerability-details">Vulnerability Details&lt;/h2>
+&lt;p>If you click on one of the vulnerabilities in your list, you will see a screen similiar to the one below.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-single-vuln.png" alt="">&lt;/p>
+&lt;p>A second navigatation bar appears which contains pages related to the vulnerability including a disclosure timeline, comments and access management.&lt;/p>
+&lt;p>If you have permissions to change the vulnerability you will find some buttons on the right to manage the vulnerability.&lt;/p>
+&lt;p>The buttons have the following functionality (from left to right):&lt;/p>
+&lt;ul>
+&lt;li>Download the vulnerability details as a PDF report&lt;/li>
+&lt;li>Export the vulnerability details as a Markdown advisory&lt;/li>
+&lt;li>Notify vendor by mail, with PDF report attached (&lt;strong>Warning: The mail will be send unencrypted. PGP or other encryption is not yet supported!&lt;/strong>)&lt;/li>
+&lt;li>Edit the vulnerability details&lt;/li>
+&lt;li>Delete the vulnerability&lt;/li>
+&lt;/ul>
+&lt;p>In the bottom half of the page, you see two more buttons for adding new proofs to the vulnerability.&lt;/p>
+&lt;h2 id="proofs">Proofs&lt;/h2>
+&lt;p>To create a new proof, just click on one of the buttons.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-create-proof.png" alt="">&lt;/p>
+&lt;p>As you can see in the screenshot, you can use markdown.
+You can highlight specific parts of a codeblock with &lt;code>§§highlighted$$&lt;/code>.&lt;/p>
+&lt;p>If you have created the proof, the proof will appear on the vulnerability details page as shown below.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-single-vuln-with-proof.png" alt="">&lt;/p>
+&lt;h2 id="timeline">Timeline&lt;/h2>
+&lt;p>The timeline allows you and the vendor to track the process of the disclosure process.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-timeline.png" alt="">&lt;/p>
+&lt;p>You can create new &lt;em>events&lt;/em> using the button on the right corner.&lt;/p>
+&lt;h2 id="comments">Comments&lt;/h2>
+&lt;p>If you shared the vulnerability with a user, you can use the comment feature to discuss further things about the disclosure process.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-comments.png" alt="">&lt;/p>
+&lt;p>You can use markdown in the comments too.&lt;/p>
+&lt;h2 id="manage-access">Manage Access&lt;/h2>
+&lt;p>To share the vulnerability with the vendor or other contributors you need the &lt;em>Manage Access&lt;/em> page.&lt;/p>
+&lt;p>The pages shows who has access to the vulnerability details.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-manage-access.png" alt="">&lt;/p>
+&lt;p>You can share the vulnerability by providing an email address.
+If this address already belongs to a vulnman user, he will be granted the corresponding permissions.
+Otherwise, an inactive user account will be created for the user with a random username.
+An invitation email will be sent to the email address to activate the account and set a password.&lt;/p></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
+&lt;h2 id="database">Database&lt;/h2>
+&lt;h3 id="postgresql">PostgreSQL&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;ENGINE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;django.db.backends.postgresql&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;db&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;NAME&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_db_user&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;PASSWORD&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;dontusethispassword&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Project Security</title><link>https://vulnman.github.io/docs/contribution-guidelines/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/security/</guid><description>
+&lt;p>This page provides a central hub for topics pertaining to the security of the
+vulnman project.&lt;/p>
+&lt;h2 id="reporting-security-issues-in-vulnman">Reporting security issues in Vulnman&lt;/h2>
+&lt;p>If you have discovered a security issue affecting vulnman, then we would be more than happy to hear from you!&lt;/p>
+&lt;p>If our investigation confirms that an issue
+affects vulnman, we will patch it within a reasonable time and release a public
+post that describes the issue,
+discusses the potential impact of the vulnerability, references applicable
+patches or workarounds, and credits the discoverer. Please use this address:&lt;/p>
+&lt;pre>&lt;code>vulnman-project+security at riseup dot net
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Permissions in Vulnman</title><link>https://vulnman.github.io/docs/advanced-topics/permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/permissions/</guid><description>
+&lt;div class="alert alert-warning">
+&lt;strong>Note:&lt;/strong> This is work in progress
+For example, the "Management" group does not yet have a independed UI.
+Permissions may not be enforced everywhere at the moment!
+&lt;/div>
+&lt;p>Vulnman comes with the following default groups and permission levels:
+l&lt;/p>
+&lt;h2 id="groups">Groups&lt;/h2>
+&lt;dl>
+&lt;dt>&lt;code>Management&lt;/code>&lt;/dt>
+&lt;dd>The management group members are allowed to list projects and clients.
+The management is allowed to create and update projects.&lt;/dd>
+&lt;dt>&lt;code>Pentesters&lt;/code>&lt;/dt>
+&lt;dd>The members of the pentester group can be added to different projects.
+This will add permissions to the user to change, delete and view the project and its assets.
+Pentesters do not have permissions to add contributors to projects (except of the project creator).
+Editing clients is forbidden too.&lt;/dd>
+&lt;/dl>
+&lt;h2 id="project-contributor-roles">Project Contributor Roles&lt;/h2>
+&lt;p>If a new contributor is added to a project the following roles are available.&lt;/p>
+&lt;dl>
+&lt;dt>&lt;code>Read Only&lt;/code>&lt;/dt>
+&lt;dd>Contributors of this role are not allowed to change assets or other stuff belonging to the project.&lt;/dd>
+&lt;dt>&lt;code>Pentester&lt;/code>&lt;/dt>
+&lt;dd>Pentesters are allowed to edit project related objects.&lt;/dd>
+&lt;/dl></description></item><item><title>Docs: Testing Releases</title><link>https://vulnman.github.io/docs/contribution-guidelines/testing-releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/testing-releases/</guid><description>
+&lt;p>Testing new vulnman releases and updates is one of the most helpful ways in
+which you can &lt;a href="https://vulnman.github.io/docs/contribution-guidelines/">contribute&lt;/a> to the vulnman project.&lt;/p>
+&lt;p>&lt;strong>Warning:&lt;/strong> Software testing is intended for advanced users and developers.
+You should only attempt to do this if you know what you&amp;rsquo;re doing. Never rely on
+code that is in testing for critical work!&lt;/p>
+&lt;h2 id="the-main-branch">The Main Branch&lt;/h2>
+&lt;p>The main branch is used for development purposes and should not be used for critical work.
+If you want to test upcoming releases, download the code from the &lt;em>main&lt;/em> branch.&lt;/p>
+&lt;p>If you are using docker, use the &lt;code>main&lt;/code> tag, which is build on every commit in the main branch.&lt;/p>
+&lt;h2 id="providing-feedback">Providing feedback&lt;/h2>
+&lt;p>Since the whole point of testing software is to discover and fix bugs, &lt;a href="https://vulnman.github.io/docs/issue-tracking/#how-to-open-a-new-issue">your
+feedback&lt;/a> is an essential part of this process.&lt;/p></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
+&lt;p>To Be Done&lt;/p></description></item><item><title>Docs: Checklists</title><link>https://vulnman.github.io/docs/advanced-topics/checklists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/checklists/</guid><description>
+&lt;p>Vulnman provides a simple task management application.
+The tasks can be imported from files and are created depending on which assets you test.&lt;/p>
+&lt;p>Since my current focus is on the core modules, the current checklists are minimalistic and really incomplete.&lt;/p>
+&lt;p>Feel free to contribute new checklists or improve existing ones.&lt;/p>
+&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
+&lt;h2 id="structure-of-checklists">Structure of Checklists&lt;/h2>
+&lt;p>First of all, the default &lt;em>community checklists&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-checklists">here&lt;/a>.&lt;/p>
+&lt;p>There are 2 required files for a checklist:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the checklist&lt;/li>
+&lt;li>&lt;strong>ReadMe.md&lt;/strong>: A description of the test that should be performed. You may want to provide background information.&lt;/li>
+&lt;/ul>
+&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">sql-injection&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">SQL-Injection&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">conditions&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">http&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">80&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">443&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">webapplication.always&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>id&lt;/code> key needs to be unique, while the &lt;code>name&lt;/code> is just used for display purposes.
+The conditions are used to create the task based on different asset attributes.&lt;/p>
+&lt;p>In the example above, the &lt;code>sql-injection&lt;/code> task is created, if a service with a name of &amp;ldquo;http&amp;rdquo; or &amp;ldquo;https&amp;rdquo;.
+Also if the service port is either 80 or 443.
+You can use the keyword &lt;code>always&lt;/code> to create the task independently of the asset attribute.&lt;/p></description></item><item><title>Docs: Vulnerability Templates</title><link>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</guid><description>
+&lt;p>The Vulnman server relies on the existing vulnerability templates.&lt;/p>
+&lt;p>Since my current focus is on the core modules, the current templates are minimalistic and rather unsuitable for meaningful reports.&lt;/p>
+&lt;p>Feel free to contribute new vulnerability templates or improve existing ones.&lt;/p>
+&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
+&lt;h2 id="structure-of-vulnerability-templates">Structure of Vulnerability Templates&lt;/h2>
+&lt;p>First of all, the default &lt;em>community vulnerability templates&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-vulnerability-templates">here&lt;/a>.&lt;/p>
+&lt;p>There are 3 required files for a vulnerability template:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the template&lt;/li>
+&lt;li>&lt;strong>description_en.md&lt;/strong>: A description of the vulnerability written in markdown syntax&lt;/li>
+&lt;li>&lt;strong>resolution_en.md&lt;/strong>: A recommendation of how the vulnerability can be fixed. Also supports markdown syntax.&lt;/li>
+&lt;/ul>
+&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">- &lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">cross-site-scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">severity&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">critical&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">references&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#4e9a06">&amp;#34;https://owasp.org/www-community/attacks/xss/&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">cwe&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">CWE-79&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">input-validation&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-info">
+Available categories can be found in the &lt;a href="https://github.com/vulnman/community-vulnerability-templates/blob/main/templates/categories.yaml">categories.yaml&lt;/a> file
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,84 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – User Guide</title><link>https://vulnman.github.io/docs/user-guide/</link><description>Recent content in User Guide on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/docs/user-guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introducing the Web Interface</title><link>https://vulnman.github.io/docs/user-guide/introducing-webui/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/introducing-webui/</guid><description>
+&lt;p>The web interface allows you to manage your pentest and its assets using a user interface.&lt;/p>
+&lt;p>You can visit the vulnman server by opening your instance from within your browser.
+The application needs you to be logged in.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/login-web-ui.png" alt="Login Screen">&lt;/p>
+&lt;p>After you logged in, you will be redirected to the list of your current (non archived) projects.
+By clicking on one of the projects, you are able to &lt;em>activate&lt;/em> the project and see its details and do your work.&lt;/p>
+&lt;h2 id="project-dashboard">Project Dashboard&lt;/h2>
+&lt;p>The project dashboard is the home of your project.
+It gives you a short overview about the state of your project.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/web_dashboard.png" alt="Dashboard">&lt;/p>
+&lt;p>It contains the remaining time for the project, different counts like how many vulnerabilities were found and open to dos are left.&lt;/p>
+&lt;p>You can close the project through the &lt;code>X&lt;/code> button.
+Closing a project makes it read-only.&lt;/p>
+&lt;p>If for some reasons you forgot your role in the project, you can found it here - in the top left of the dashboard.&lt;/p>
+&lt;p>A sidebar will be available with project related actions.&lt;/p>
+&lt;h2 id="the-sidebar">The Sidebar&lt;/h2>
+&lt;p>The sidebar only contains project related links, while the top bar include &lt;em>global&lt;/em> links.
+The sidebar is devided into different &lt;em>categories&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Pentest:&lt;/strong>&lt;/p>
+&lt;p>The pentest group contains links to your project&amp;rsquo;s dashboard, vulnerabilities, tasks, user accounts and project tokens.&lt;/p>
+&lt;p>&lt;strong>Assets:&lt;/strong>&lt;/p>
+&lt;p>In this group you can create and manage your assets.&lt;/p>
+&lt;p>&lt;strong>Management:&lt;/strong>&lt;/p>
+&lt;p>This group handels links to manage the project. Currently there is just one item in here, which allows you to add or remove contributors.
+It is important to know, that you need permissions to do so. By default, the project creator user will be able to remove or add contributors.&lt;/p>
+&lt;p>&lt;strong>Reporting:&lt;/strong>&lt;/p>
+&lt;p>Here you can create new reports or download existing one.
+You can write the management summary here.&lt;/p>
+&lt;h2 id="reporting">Reporting&lt;/h2>
+&lt;p>This page allows you to manage your project&amp;rsquo;s reports.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/reporting-ui.png" alt="Report Management Page">&lt;/p>
+&lt;p>A general draft report can be created. This report will not have a named, unchangable version.
+If you click on the &lt;code>Create Draft&lt;/code> button, it will create, and overwrite the previous, report.&lt;/p>
+&lt;p>If you need a new persisted version of your reports, you must click on &lt;code>Create Report&lt;/code>.
+This will open a new window, where you can choose between the report types &amp;ldquo;Release&amp;rdquo; and &amp;ldquo;Draft&amp;rdquo;.
+This version will not be overwritten by other reports.&lt;/p>
+&lt;p>The management summary fields &lt;code>Evaluation&lt;/code> and &lt;code>Recommendation&lt;/code> supports markdown syntax.
+If your cursor leaves the focus of the field, the data is saved into the database and will appear in your next reports.&lt;/p></description></item><item><title>Docs: Using The Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</guid><description>
+&lt;div class="alert alert-info">
+Your instance must have the responsible disclosure application feature enabled, otherwise it will not be accessible for you.
+&lt;/div>
+&lt;h2 id="vulnerability-listing">Vulnerability Listing&lt;/h2>
+&lt;p>Visiting the &lt;a href="https://vulnman.github.io/docs/glossary/responsible-disclosure-app">Responsible Disclosure Application&lt;/a> opens up your list of vulnerabilities.&lt;/p>
+&lt;p>This list contains all vulnerabilities that you have created or that have been shared with you.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-vuln-list.png" alt="Vulnerability List">&lt;/p>
+&lt;p>The default view is to show only open findings, while you can easily view closed ones by clicking the corresponding button.&lt;/p>
+&lt;h2 id="vulnerability-details">Vulnerability Details&lt;/h2>
+&lt;p>If you click on one of the vulnerabilities in your list, you will see a screen similiar to the one below.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-single-vuln.png" alt="">&lt;/p>
+&lt;p>A second navigatation bar appears which contains pages related to the vulnerability including a disclosure timeline, comments and access management.&lt;/p>
+&lt;p>If you have permissions to change the vulnerability you will find some buttons on the right to manage the vulnerability.&lt;/p>
+&lt;p>The buttons have the following functionality (from left to right):&lt;/p>
+&lt;ul>
+&lt;li>Download the vulnerability details as a PDF report&lt;/li>
+&lt;li>Export the vulnerability details as a Markdown advisory&lt;/li>
+&lt;li>Notify vendor by mail, with PDF report attached (&lt;strong>Warning: The mail will be send unencrypted. PGP or other encryption is not yet supported!&lt;/strong>)&lt;/li>
+&lt;li>Edit the vulnerability details&lt;/li>
+&lt;li>Delete the vulnerability&lt;/li>
+&lt;/ul>
+&lt;p>In the bottom half of the page, you see two more buttons for adding new proofs to the vulnerability.&lt;/p>
+&lt;h2 id="proofs">Proofs&lt;/h2>
+&lt;p>To create a new proof, just click on one of the buttons.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-create-proof.png" alt="">&lt;/p>
+&lt;p>As you can see in the screenshot, you can use markdown.
+You can highlight specific parts of a codeblock with &lt;code>§§highlighted$$&lt;/code>.&lt;/p>
+&lt;p>If you have created the proof, the proof will appear on the vulnerability details page as shown below.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-single-vuln-with-proof.png" alt="">&lt;/p>
+&lt;h2 id="timeline">Timeline&lt;/h2>
+&lt;p>The timeline allows you and the vendor to track the process of the disclosure process.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-timeline.png" alt="">&lt;/p>
+&lt;p>You can create new &lt;em>events&lt;/em> using the button on the right corner.&lt;/p>
+&lt;h2 id="comments">Comments&lt;/h2>
+&lt;p>If you shared the vulnerability with a user, you can use the comment feature to discuss further things about the disclosure process.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-comments.png" alt="">&lt;/p>
+&lt;p>You can use markdown in the comments too.&lt;/p>
+&lt;h2 id="manage-access">Manage Access&lt;/h2>
+&lt;p>To share the vulnerability with the vendor or other contributors you need the &lt;em>Manage Access&lt;/em> page.&lt;/p>
+&lt;p>The pages shows who has access to the vulnerability details.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/rd-manage-access.png" alt="">&lt;/p>
+&lt;p>You can share the vulnerability by providing an email address.
+If this address already belongs to a vulnman user, he will be granted the corresponding permissions.
+Otherwise, an inactive user account will be created for the user with a random username.
+An invitation email will be sent to the email address to activate the account and set a password.&lt;/p></description></item></channel></rss>

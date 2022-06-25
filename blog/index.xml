@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – Docsy Blog</title><link>https://vulnman.github.io/blog/</link><description>Recent content in Docsy Blog on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Current Development Status</title><link>https://vulnman.github.io/blog/2022/05/26/current-development-status/</link><pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/blog/2022/05/26/current-development-status/</guid><description>
+&lt;p>This post is intended to give a brief summary of the current development processes and ideas in vulnman.&lt;/p>
+&lt;p>Currently the focus is on implementing and improving the &amp;ldquo;Responsible Disclosure&amp;rdquo; application.
+There have been some bug fixes and UI improvements here.&lt;/p>
+&lt;p>In addition, preparations are underway for new user roles that will be able to log in and use vulnman in the future.
+Using the &amp;ldquo;Responsible Disclosure&amp;rdquo; application as an example, we are thinking of developers of the software in question.
+These should be able to be invited in the future and thus receive a release for the corresponding vulnerabilities.&lt;/p>
+&lt;p>A few other quick updates:&lt;/p>
+&lt;p>We have already implemented our own user model.
+This is a breaking change to version 0.3.0.
+Data from version 0.3.0 will probably not be migratable.
+However, this change will allow us more flexibility in the future.&lt;/p>
+&lt;p>User profiles already exist. These are currently still minimalistic, but the base is already done.
+Pentester profiles are public and should be able to be changed to private in the future.&lt;/p>
+&lt;p>Soon there will be a first implementation of a comment function under vulnerabilities in the RD.&lt;/p>
+&lt;p>The page a user sees after login will differ per user role.&lt;/p>
+&lt;p>These will be by and large the changes in the next release.&lt;/p>
+&lt;p>See you soon.&lt;/p></description></item><item><title>Blog: New Documentation</title><link>https://vulnman.github.io/blog/2022/05/26/new-documentation/</link><pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/blog/2022/05/26/new-documentation/</guid><description>
+&lt;p>The &lt;a href="https://vulnman.github.io/doc">vulnman documentation&lt;/a> got a new home.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – Contribution Guidelines</title><link>https://vulnman.github.io/docs/contribution-guidelines/</link><description>Recent content in Contribution Guidelines on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/docs/contribution-guidelines/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Project Security</title><link>https://vulnman.github.io/docs/contribution-guidelines/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/security/</guid><description>
+&lt;p>This page provides a central hub for topics pertaining to the security of the
+vulnman project.&lt;/p>
+&lt;h2 id="reporting-security-issues-in-vulnman">Reporting security issues in Vulnman&lt;/h2>
+&lt;p>If you have discovered a security issue affecting vulnman, then we would be more than happy to hear from you!&lt;/p>
+&lt;p>If our investigation confirms that an issue
+affects vulnman, we will patch it within a reasonable time and release a public
+post that describes the issue,
+discusses the potential impact of the vulnerability, references applicable
+patches or workarounds, and credits the discoverer. Please use this address:&lt;/p>
+&lt;pre>&lt;code>vulnman-project+security at riseup dot net
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Testing Releases</title><link>https://vulnman.github.io/docs/contribution-guidelines/testing-releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/testing-releases/</guid><description>
+&lt;p>Testing new vulnman releases and updates is one of the most helpful ways in
+which you can &lt;a href="https://vulnman.github.io/docs/contribution-guidelines/">contribute&lt;/a> to the vulnman project.&lt;/p>
+&lt;p>&lt;strong>Warning:&lt;/strong> Software testing is intended for advanced users and developers.
+You should only attempt to do this if you know what you&amp;rsquo;re doing. Never rely on
+code that is in testing for critical work!&lt;/p>
+&lt;h2 id="the-main-branch">The Main Branch&lt;/h2>
+&lt;p>The main branch is used for development purposes and should not be used for critical work.
+If you want to test upcoming releases, download the code from the &lt;em>main&lt;/em> branch.&lt;/p>
+&lt;p>If you are using docker, use the &lt;code>main&lt;/code> tag, which is build on every commit in the main branch.&lt;/p>
+&lt;h2 id="providing-feedback">Providing feedback&lt;/h2>
+&lt;p>Since the whole point of testing software is to discover and fix bugs, &lt;a href="https://vulnman.github.io/docs/issue-tracking/#how-to-open-a-new-issue">your
+feedback&lt;/a> is an essential part of this process.&lt;/p></description></item></channel></rss>
