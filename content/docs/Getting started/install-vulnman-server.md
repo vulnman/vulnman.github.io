@@ -48,7 +48,7 @@ cp local_settings.template.py local_settings.py
 ### Configure Database
 The default settings will use a sqlite database.
 If you are fine with this you can continue with this tutorial.
-Otherwise, you may want to read how to [configure](/doc/server/databases/) your installation.
+Otherwise, you may want to read how to [configure](/docs/getting-started/configuration/) your installation.
 
 
 ### Initializing Vulnman
@@ -132,7 +132,7 @@ python manage.py update_checklists
 
 Adjust the credentials and paths in the [docker-compose.yml](https://github.com/vulnman/vulnman/blob/main/docker-compose.yml) file.
 
-For the docker image to work, you need to set up vulnman to use a [postgres database](/doc/server/databases#postgresql).
+For the docker image to work, you need to set up vulnman to use a [postgres database](/docs/getting-started/configuration/#postgresql).
 
 To make the report generation work, add the following line to your `local_settings.py` file:
 
