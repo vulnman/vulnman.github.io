@@ -12,9 +12,9 @@
 {{ else if $gh_repo -}}
   {{ $gh_repo_path := printf "%s/content/%s" $gh_branch $pathFormatted -}}
   {{ if and ($gh_subdir) (.Site.Language.Lang) -}}
-    {{ $gh_repo_path = printf "%s/%s/content/%s/%s" $gh_branch $gh_subdir ($.Site.Language.Lang) $pathFormatted -}}
+    {{ $gh_repo_path = printf "%s/%s/content/%s" $gh_branch $gh_subdir $pathFormatted -}}
   {{ else if .Site.Language.Lang -}}
-    {{ $gh_repo_path = printf "%s/content/%s/%s" $gh_branch ($.Site.Language.Lang) $pathFormatted -}}
+    {{ $gh_repo_path = printf "%s/content/%s" $gh_branch $pathFormatted -}}
   {{ else if $gh_subdir -}}
     {{ $gh_repo_path = printf "%s/%s/content/%s" $gh_branch $gh_subdir $pathFormatted -}}
   {{ end -}}
@@ -50,7 +50,7 @@
     <i class="fas fa-tasks fa-fw"></i> {{ T "post_create_issue" }}
   </a>
   {{ with $gh_project_repo -}}
-    {{ $project_issueURL := printf "%s/issues/new" . -}}
+    {{ $project_issueURL := printf "%s/vulnman/issues/new" . -}}
     <a href="{{ $project_issueURL }}" class="td-page-meta--project-issue list-group-item" target="_blank" rel="noopener">
       <i class="fas fa-bug fa-fw"></i> {{ T "post_create_project_issue" }}
     </a>
