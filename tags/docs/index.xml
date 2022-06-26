@@ -164,7 +164,7 @@ cp local_settings.template.py local_settings.py
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-database">Configure Database&lt;/h3>
 &lt;p>The default settings will use a sqlite database.
 If you are fine with this you can continue with this tutorial.
-Otherwise, you may want to read how to &lt;a href="https://vulnman.github.io/doc/server/databases/">configure&lt;/a> your installation.&lt;/p>
+Otherwise, you may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
 &lt;h3 id="initializing-vulnman">Initializing Vulnman&lt;/h3>
 &lt;p>In the next step, we need to initialize vulnman.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py migrate
@@ -211,7 +211,7 @@ proxy_pass http://127.0.0.1:8000;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.&lt;/em>&lt;/p>
 &lt;h2 id="with-docker">With Docker&lt;/h2>
 &lt;p>Adjust the credentials and paths in the &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker-compose.yml">docker-compose.yml&lt;/a> file.&lt;/p>
-&lt;p>For the docker image to work, you need to set up vulnman to use a &lt;a href="https://vulnman.github.io/doc/server/databases#postgresql">postgres database&lt;/a>.&lt;/p>
+&lt;p>For the docker image to work, you need to set up vulnman to use a &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/#postgresql">postgres database&lt;/a>.&lt;/p>
 &lt;p>To make the report generation work, add the following line to your &lt;code>local_settings.py&lt;/code> file:&lt;/p>
 &lt;pre>&lt;code>CELERY_BROKER_URL = &amp;quot;redis://redis:6379&amp;quot;
 &lt;/code>&lt;/pre>&lt;p>A basic settings example for the docker setup is shown below:&lt;/p>
