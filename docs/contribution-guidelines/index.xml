@@ -21,4 +21,5 @@ If you want to test upcoming releases, download the code from the &lt;em>main&lt
 &lt;p>If you are using docker, use the &lt;code>main&lt;/code> tag, which is build on every commit in the main branch.&lt;/p>
 &lt;h2 id="providing-feedback">Providing feedback&lt;/h2>
 &lt;p>Since the whole point of testing software is to discover and fix bugs, &lt;a href="https://vulnman.github.io/docs/issue-tracking/#how-to-open-a-new-issue">your
-feedback&lt;/a> is an essential part of this process.&lt;/p></description></item></channel></rss>
+feedback&lt;/a> is an essential part of this process.&lt;/p></description></item><item><title>Docs: How To Edit The Documentation</title><link>https://vulnman.github.io/docs/contribution-guidelines/how-to-edit-the-documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/how-to-edit-the-documentation/</guid><description>
+&lt;p>To Be Done&lt;/p></description></item></channel></rss>

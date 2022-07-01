@@ -114,17 +114,7 @@ The sidebar is devided into different &lt;em>categories&lt;/em>.&lt;/p>
 It is important to know, that you need permissions to do so. By default, the project creator user will be able to remove or add contributors.&lt;/p>
 &lt;p>&lt;strong>Reporting:&lt;/strong>&lt;/p>
 &lt;p>Here you can create new reports or download existing one.
-You can write the management summary here.&lt;/p>
-&lt;h2 id="reporting">Reporting&lt;/h2>
-&lt;p>This page allows you to manage your project&amp;rsquo;s reports.&lt;/p>
-&lt;p>&lt;img src="https://vulnman.github.io/attachments/reporting-ui.png" alt="Report Management Page">&lt;/p>
-&lt;p>A general draft report can be created. This report will not have a named, unchangable version.
-If you click on the &lt;code>Create Draft&lt;/code> button, it will create, and overwrite the previous, report.&lt;/p>
-&lt;p>If you need a new persisted version of your reports, you must click on &lt;code>Create Report&lt;/code>.
-This will open a new window, where you can choose between the report types &amp;ldquo;Release&amp;rdquo; and &amp;ldquo;Draft&amp;rdquo;.
-This version will not be overwritten by other reports.&lt;/p>
-&lt;p>The management summary fields &lt;code>Evaluation&lt;/code> and &lt;code>Recommendation&lt;/code> supports markdown syntax.
-If your cursor leaves the focus of the field, the data is saved into the database and will appear in your next reports.&lt;/p></description></item><item><title>Docs: Install Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</guid><description>
+You can write the management summary here.&lt;/p></description></item><item><title>Docs: Install Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</guid><description>
 &lt;div class="alert alert-warning">
 &lt;i class="fa fa-warning">&lt;/i>
 Vulnman is in a really early stage of development. Feel free to use, test it and please report bugs and other ideas.
@@ -216,7 +206,30 @@ CSRF_TRUSTED_ORIGINS = [&amp;quot;http://localhost&amp;quot;, &amp;quot;https://
 &lt;/code>&lt;/pre>&lt;p>An example nginx config file can be found &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker/nginx.conf">here&lt;/a>.&lt;/p>
 &lt;p>You can start all containers with the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: LDAP Authentication</title><link>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Generate Reports</title><link>https://vulnman.github.io/docs/user-guide/report-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/report-generation/</guid><description>
+&lt;p>The reports in vulnman are generated from templates.&lt;/p>
+&lt;p>A simple default template is included, but you may want to &lt;a href="https://vulnman.github.io/docs/advanced-topics/report-templates/">customize&lt;/a> it to make it yours.&lt;/p>
+&lt;h2 id="report-list">Report List&lt;/h2>
+&lt;p>You can have multiple reports for your projects, in case your customer wants to have for example an english, and a german report.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report-list.png" alt="Project Reports">&lt;/p>
+&lt;h2 id="new-reports">New Reports&lt;/h2>
+&lt;p>To create a new report, you need to give vulnman some information about the report.&lt;/p>
+&lt;p>The &lt;code>name&lt;/code> is just for internal purposes and is displayed in the report list.
+The &lt;code>author&lt;/code> of the report is displayed in the report.
+The &lt;code>title&lt;/code> field is optional and can be used to overwrite the default report title.
+You can also choose a report template and language.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report-create.png" alt="Create Report">&lt;/p>
+&lt;h2 id="the-report">The Report&lt;/h2>
+&lt;p>The report requires you to write a management summary using the &lt;code>Evaluation&lt;/code> and &lt;code>Recommendation&lt;/code> fields.
+Both fields will send a request to the API once you remove the focus of the fields and the content will be stored in the database.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report.png" alt="Report">&lt;/p>
+&lt;h2 id="report-releases">Report Releases&lt;/h2>
+&lt;p>A report release is a fixed state of the report.
+Once you create a report release the report generator will use the most current information and generates the report.
+If you add new vulnerabilities or edit the management summary, you need to create a new report release.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/report-release-list.png" alt="Report Releases">&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> There is currently no status indicator of the build process. Depending on the project size, the generation may need some time.&lt;/p>
+&lt;p>After the report is created, you can click the download button to receive the generated PDF report.&lt;/p></description></item><item><title>Docs: LDAP Authentication</title><link>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</guid><description>
 &lt;p>In the first step, you need to install &lt;code>django-auth-ldap&lt;/code>.
 This can be done with pip.&lt;/p>
 &lt;pre>&lt;code>pip install django-auth-ldap
@@ -322,8 +335,7 @@ patches or workarounds, and credits the discoverer. Please use this address:&lt;
 For example, the "Management" group does not yet have a independed UI.
 Permissions may not be enforced everywhere at the moment!
 &lt;/div>
-&lt;p>Vulnman comes with the following default groups and permission levels:
-l&lt;/p>
+&lt;p>Vulnman comes with the following default groups and permission levels:&lt;/p>
 &lt;h2 id="groups">Groups&lt;/h2>
 &lt;dl>
 &lt;dt>&lt;code>Management&lt;/code>&lt;/dt>
@@ -334,6 +346,9 @@ The management is allowed to create and update projects.&lt;/dd>
 This will add permissions to the user to change, delete and view the project and its assets.
 Pentesters do not have permissions to add contributors to projects (except of the project creator).
 Editing clients is forbidden too.&lt;/dd>
+&lt;dt>&lt;code>Vendors&lt;/code>&lt;/dt>
+&lt;dd>A vendor is allowed to use the &lt;a href="https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/">Responsible Disclosure&lt;/a>
+application. The vendor is allowed to comment on shared vulnerabilities.&lt;/dd>
 &lt;/dl>
 &lt;h2 id="project-contributor-roles">Project Contributor Roles&lt;/h2>
 &lt;p>If a new contributor is added to a project the following roles are available.&lt;/p>
@@ -354,7 +369,8 @@ If you want to test upcoming releases, download the code from the &lt;em>main&lt
 &lt;p>If you are using docker, use the &lt;code>main&lt;/code> tag, which is build on every commit in the main branch.&lt;/p>
 &lt;h2 id="providing-feedback">Providing feedback&lt;/h2>
 &lt;p>Since the whole point of testing software is to discover and fix bugs, &lt;a href="https://vulnman.github.io/docs/issue-tracking/#how-to-open-a-new-issue">your
-feedback&lt;/a> is an essential part of this process.&lt;/p></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
+feedback&lt;/a> is an essential part of this process.&lt;/p></description></item><item><title>Docs: How To Edit The Documentation</title><link>https://vulnman.github.io/docs/contribution-guidelines/how-to-edit-the-documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/how-to-edit-the-documentation/</guid><description>
+&lt;p>To Be Done&lt;/p></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
 &lt;p>To Be Done&lt;/p></description></item><item><title>Docs: Checklists</title><link>https://vulnman.github.io/docs/advanced-topics/checklists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/checklists/</guid><description>
 &lt;p>Vulnman provides a simple task management application.
 The tasks can be imported from files and are created depending on which assets you test.&lt;/p>
@@ -385,16 +401,28 @@ You can use the keyword &lt;code>always&lt;/code> to create the task independent
 &lt;p>The Vulnman server relies on the existing vulnerability templates.&lt;/p>
 &lt;p>Since my current focus is on the core modules, the current templates are minimalistic and rather unsuitable for meaningful reports.&lt;/p>
 &lt;p>Feel free to contribute new vulnerability templates or improve existing ones.&lt;/p>
-&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
+&lt;p>Currently there is little to consider, and the creation is very simple.&lt;/p>
 &lt;h2 id="structure-of-vulnerability-templates">Structure of Vulnerability Templates&lt;/h2>
 &lt;p>First of all, the default &lt;em>community vulnerability templates&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-vulnerability-templates">here&lt;/a>.&lt;/p>
 &lt;p>There are 3 required files for a vulnerability template:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the template&lt;/li>
-&lt;li>&lt;strong>description_en.md&lt;/strong>: A description of the vulnerability written in markdown syntax&lt;/li>
-&lt;li>&lt;strong>resolution_en.md&lt;/strong>: A recommendation of how the vulnerability can be fixed. Also supports markdown syntax.&lt;/li>
+&lt;li>&lt;strong>description.md&lt;/strong>: A description of the vulnerability written in markdown syntax&lt;/li>
+&lt;li>&lt;strong>resolution.md&lt;/strong>: A recommendation of how the vulnerability can be fixed. Also supports markdown syntax.&lt;/li>
 &lt;/ul>
-&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
+&lt;p>Vulnman supports multiple languages for report creation.
+This requires to have vulnerability templates in these languages.&lt;/p>
+&lt;p>The directory structure of a vulnerability template looks similar to the one below:&lt;/p>
+&lt;pre>&lt;code>| - my_vulnerability
+| - info.yaml
+| - locale
+| - en
+| - description.md
+| - recommendation.md
+| - de
+| - description.md
+| - recommendation.md
+&lt;/code>&lt;/pre>&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">- &lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">cross-site-scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">severity&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">critical&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -404,6 +432,11 @@ You can use the keyword &lt;code>always&lt;/code> to create the task independent
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">CWE-79&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">input-validation&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">locale&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">en&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">de&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-info">
 Available categories can be found in the &lt;a href="https://github.com/vulnman/community-vulnerability-templates/blob/main/templates/categories.yaml">categories.yaml&lt;/a> file
 &lt;/div></description></item></channel></rss>

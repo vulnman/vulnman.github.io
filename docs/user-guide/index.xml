@@ -26,17 +26,30 @@ The sidebar is devided into different &lt;em>categories&lt;/em>.&lt;/p>
 It is important to know, that you need permissions to do so. By default, the project creator user will be able to remove or add contributors.&lt;/p>
 &lt;p>&lt;strong>Reporting:&lt;/strong>&lt;/p>
 &lt;p>Here you can create new reports or download existing one.
-You can write the management summary here.&lt;/p>
-&lt;h2 id="reporting">Reporting&lt;/h2>
-&lt;p>This page allows you to manage your project&amp;rsquo;s reports.&lt;/p>
-&lt;p>&lt;img src="https://vulnman.github.io/attachments/reporting-ui.png" alt="Report Management Page">&lt;/p>
-&lt;p>A general draft report can be created. This report will not have a named, unchangable version.
-If you click on the &lt;code>Create Draft&lt;/code> button, it will create, and overwrite the previous, report.&lt;/p>
-&lt;p>If you need a new persisted version of your reports, you must click on &lt;code>Create Report&lt;/code>.
-This will open a new window, where you can choose between the report types &amp;ldquo;Release&amp;rdquo; and &amp;ldquo;Draft&amp;rdquo;.
-This version will not be overwritten by other reports.&lt;/p>
-&lt;p>The management summary fields &lt;code>Evaluation&lt;/code> and &lt;code>Recommendation&lt;/code> supports markdown syntax.
-If your cursor leaves the focus of the field, the data is saved into the database and will appear in your next reports.&lt;/p></description></item><item><title>Docs: Using The Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</guid><description>
+You can write the management summary here.&lt;/p></description></item><item><title>Docs: Generate Reports</title><link>https://vulnman.github.io/docs/user-guide/report-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/report-generation/</guid><description>
+&lt;p>The reports in vulnman are generated from templates.&lt;/p>
+&lt;p>A simple default template is included, but you may want to &lt;a href="https://vulnman.github.io/docs/advanced-topics/report-templates/">customize&lt;/a> it to make it yours.&lt;/p>
+&lt;h2 id="report-list">Report List&lt;/h2>
+&lt;p>You can have multiple reports for your projects, in case your customer wants to have for example an english, and a german report.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report-list.png" alt="Project Reports">&lt;/p>
+&lt;h2 id="new-reports">New Reports&lt;/h2>
+&lt;p>To create a new report, you need to give vulnman some information about the report.&lt;/p>
+&lt;p>The &lt;code>name&lt;/code> is just for internal purposes and is displayed in the report list.
+The &lt;code>author&lt;/code> of the report is displayed in the report.
+The &lt;code>title&lt;/code> field is optional and can be used to overwrite the default report title.
+You can also choose a report template and language.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report-create.png" alt="Create Report">&lt;/p>
+&lt;h2 id="the-report">The Report&lt;/h2>
+&lt;p>The report requires you to write a management summary using the &lt;code>Evaluation&lt;/code> and &lt;code>Recommendation&lt;/code> fields.
+Both fields will send a request to the API once you remove the focus of the fields and the content will be stored in the database.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report.png" alt="Report">&lt;/p>
+&lt;h2 id="report-releases">Report Releases&lt;/h2>
+&lt;p>A report release is a fixed state of the report.
+Once you create a report release the report generator will use the most current information and generates the report.
+If you add new vulnerabilities or edit the management summary, you need to create a new report release.&lt;/p>
+&lt;p>&lt;img src="https://vulnman.github.io/attachments/report-release-list.png" alt="Report Releases">&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> There is currently no status indicator of the build process. Depending on the project size, the generation may need some time.&lt;/p>
+&lt;p>After the report is created, you can click the download button to receive the generated PDF report.&lt;/p></description></item><item><title>Docs: Using The Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</guid><description>
 &lt;div class="alert alert-info">
 Your instance must have the responsible disclosure application feature enabled, otherwise it will not be accessible for you.
 &lt;/div>

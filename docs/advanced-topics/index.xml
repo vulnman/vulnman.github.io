@@ -35,8 +35,7 @@ This can be done with pip.&lt;/p>
 For example, the "Management" group does not yet have a independed UI.
 Permissions may not be enforced everywhere at the moment!
 &lt;/div>
-&lt;p>Vulnman comes with the following default groups and permission levels:
-l&lt;/p>
+&lt;p>Vulnman comes with the following default groups and permission levels:&lt;/p>
 &lt;h2 id="groups">Groups&lt;/h2>
 &lt;dl>
 &lt;dt>&lt;code>Management&lt;/code>&lt;/dt>
@@ -47,6 +46,9 @@ The management is allowed to create and update projects.&lt;/dd>
 This will add permissions to the user to change, delete and view the project and its assets.
 Pentesters do not have permissions to add contributors to projects (except of the project creator).
 Editing clients is forbidden too.&lt;/dd>
+&lt;dt>&lt;code>Vendors&lt;/code>&lt;/dt>
+&lt;dd>A vendor is allowed to use the &lt;a href="https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/">Responsible Disclosure&lt;/a>
+application. The vendor is allowed to comment on shared vulnerabilities.&lt;/dd>
 &lt;/dl>
 &lt;h2 id="project-contributor-roles">Project Contributor Roles&lt;/h2>
 &lt;p>If a new contributor is added to a project the following roles are available.&lt;/p>
@@ -85,16 +87,28 @@ You can use the keyword &lt;code>always&lt;/code> to create the task independent
 &lt;p>The Vulnman server relies on the existing vulnerability templates.&lt;/p>
 &lt;p>Since my current focus is on the core modules, the current templates are minimalistic and rather unsuitable for meaningful reports.&lt;/p>
 &lt;p>Feel free to contribute new vulnerability templates or improve existing ones.&lt;/p>
-&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
+&lt;p>Currently there is little to consider, and the creation is very simple.&lt;/p>
 &lt;h2 id="structure-of-vulnerability-templates">Structure of Vulnerability Templates&lt;/h2>
 &lt;p>First of all, the default &lt;em>community vulnerability templates&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-vulnerability-templates">here&lt;/a>.&lt;/p>
 &lt;p>There are 3 required files for a vulnerability template:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the template&lt;/li>
-&lt;li>&lt;strong>description_en.md&lt;/strong>: A description of the vulnerability written in markdown syntax&lt;/li>
-&lt;li>&lt;strong>resolution_en.md&lt;/strong>: A recommendation of how the vulnerability can be fixed. Also supports markdown syntax.&lt;/li>
+&lt;li>&lt;strong>description.md&lt;/strong>: A description of the vulnerability written in markdown syntax&lt;/li>
+&lt;li>&lt;strong>resolution.md&lt;/strong>: A recommendation of how the vulnerability can be fixed. Also supports markdown syntax.&lt;/li>
 &lt;/ul>
-&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
+&lt;p>Vulnman supports multiple languages for report creation.
+This requires to have vulnerability templates in these languages.&lt;/p>
+&lt;p>The directory structure of a vulnerability template looks similar to the one below:&lt;/p>
+&lt;pre>&lt;code>| - my_vulnerability
+| - info.yaml
+| - locale
+| - en
+| - description.md
+| - recommendation.md
+| - de
+| - description.md
+| - recommendation.md
+&lt;/code>&lt;/pre>&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">- &lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">cross-site-scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">severity&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">critical&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -104,6 +118,11 @@ You can use the keyword &lt;code>always&lt;/code> to create the task independent
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">CWE-79&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">categories&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">input-validation&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">locale&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">en&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">de&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Cross-Site Scripting&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-info">
 Available categories can be found in the &lt;a href="https://github.com/vulnman/community-vulnerability-templates/blob/main/templates/categories.yaml">categories.yaml&lt;/a> file
 &lt;/div></description></item></channel></rss>
