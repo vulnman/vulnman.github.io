@@ -31,15 +31,16 @@ Despite other solutions, vulnman does not limit the amount of users or projects.
 &lt;h3>Report Generator&lt;/h3>
 &lt;p>
 Vulnman contains a simple to use pentest report generator.
+Never waste your time struggling with Word documents.
 &lt;/p>
 &lt;/div>
 &lt;div class="col-lg-4 col-md-4 col-xs-12">
 &lt;h3>Customizable&lt;/h3>
 &lt;p>
 Vulnman can be customized at multiple places. Some of them are:
-&lt;a href="https://vulnman.github.io/doc/customize/report-template">Report Template&lt;/a>,
-&lt;a href="https://vulnman.github.io/doc/vulnerability-templates">Vulnerability Templates&lt;/a>,
-&lt;a href="https://vulnman.github.io/doc/checklists">Checklists&lt;/a>
+&lt;a href="https://vulnman.github.io/docs/advanced-topics/custom-report-templates/">Report Template&lt;/a>,
+&lt;a href="https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates&lt;/a>,
+&lt;a href="https://vulnman.github.io/docs/advanced-topics/checklists/">Checklists&lt;/a>
 &lt;/p>
 &lt;/div>
 &lt;/div>
@@ -55,7 +56,7 @@ Vulnman allows you to write your texts in markdown (mostly).
 &lt;h3>Vulnerability Management&lt;/h3>
 &lt;p>
 Vulnman includes simple features to manage vulnerabilities of your projects.
-This includes &lt;a href="https://vulnman.github.io/doc/vulnerability-templates">Vulnerability Templates&lt;/a>
+This includes &lt;a href="https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates&lt;/a>
 and CVSS scoring.
 &lt;/p>
 &lt;/div>
@@ -75,15 +76,15 @@ technical details have been omitted here for the sake of presentation.
 &lt;ul>
 &lt;li>
 If you're a current or potential Vulnman user, you may want to check out the
-&lt;a href="https://vulnman.github.io/doc/">documentation&lt;/a>.
+&lt;a href="https://vulnman.github.io/docs/">documentation&lt;/a>.
 &lt;/li>
 &lt;li>
 If you're a developer, there's dedicated
-&lt;a href="https://vulnman.github.io/doc/#developer-documentation">developer documentation&lt;/a>.
+&lt;a href="https://vulnman.github.io/docs/#developer-documentation">developer documentation&lt;/a>.
 &lt;/li>
 &lt;li>
 Need help, or just want to join the conversation? Learn more about
-&lt;a href="https://vulnman.github.io/support/">help, support, the mailing lists, and the forum&lt;/a>.
+&lt;a href="https://vulnman.github.io/community/">help, support, and the community&lt;/a>.
 &lt;/li>
 &lt;/ul>
 &lt;/p></description></item><item><title>Docs: Install Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/install-vulnman-server/</guid><description>

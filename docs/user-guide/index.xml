@@ -49,7 +49,10 @@ Once you create a report release the report generator will use the most current 
 If you add new vulnerabilities or edit the management summary, you need to create a new report release.&lt;/p>
 &lt;p>&lt;img src="https://vulnman.github.io/attachments/report-release-list.png" alt="Report Releases">&lt;/p>
 &lt;p>&lt;strong>Note:&lt;/strong> There is currently no status indicator of the build process. Depending on the project size, the generation may need some time.&lt;/p>
-&lt;p>After the report is created, you can click the download button to receive the generated PDF report.&lt;/p></description></item><item><title>Docs: Using The Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</guid><description>
+&lt;p>After the report is created, you can click the download button to receive the generated PDF report.&lt;/p>
+&lt;p>Report releases can have different &lt;em>types&lt;/em>.
+The &lt;code>draft&lt;/code> contains a watermark which indicates, that this report is actually a draft report.
+The &lt;code>release&lt;/code> does not have a watermark.&lt;/p></description></item><item><title>Docs: Using The Responsible Disclosure Application</title><link>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/</guid><description>
 &lt;div class="alert alert-info">
 Your instance must have the responsible disclosure application feature enabled, otherwise it will not be accessible for you.
 &lt;/div>
