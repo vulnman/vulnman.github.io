@@ -45,15 +45,16 @@ You should <b>not</b> use it in production, because there may be breaking change
     <h3>Report Generator</h3>
     <p>
       Vulnman contains a simple to use pentest report generator.
+    Never waste your time struggling with Word documents.
     </p>
   </div>
   <div class="col-lg-4 col-md-4 col-xs-12">
     <h3>Customizable</h3>
     <p>
       Vulnman can be customized at multiple places. Some of them are:
-      <a href="/doc/customize/report-template">Report Template</a>,
-      <a href="/doc/vulnerability-templates">Vulnerability Templates</a>,
-      <a href="/doc/checklists">Checklists</a>
+      <a href="/docs/advanced-topics/custom-report-templates/">Report Template</a>,
+      <a href="/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates</a>,
+      <a href="/docs/advanced-topics/checklists/">Checklists</a>
     </p>
   </div>
 </div>
@@ -71,7 +72,7 @@ You should <b>not</b> use it in production, because there may be breaking change
     <h3>Vulnerability Management</h3>
     <p>
       Vulnman includes simple features to manage vulnerabilities of your projects.
-      This includes <a href="/doc/vulnerability-templates">Vulnerability Templates</a>
+      This includes <a href="/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates</a>
       and CVSS scoring.
     </p>
   </div>
@@ -94,15 +95,15 @@ You should <b>not</b> use it in production, because there may be breaking change
   <ul>
     <li>
       If you're a current or potential Vulnman user, you may want to check out the
-      <a href="/doc/">documentation</a>.
+      <a href="/docs/">documentation</a>.
     </li>
     <li>
       If you're a developer, there's dedicated
-      <a href="/doc/#developer-documentation">developer documentation</a>.
+      <a href="/docs/#developer-documentation">developer documentation</a>.
     </li>
     <li>
       Need help, or just want to join the conversation? Learn more about
-      <a href="/support/">help, support, the mailing lists, and the forum</a>.
+      <a href="/community/">help, support, and the community</a>.
     </li>
   </ul>
 </p>

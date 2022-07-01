@@ -34,11 +34,7 @@ The following assets are supported:
     - Host
     - Web Application
     - Web Request
-
-- **Report:** There are different types of pentest reports.
-A draft report contains a *draft* watermark, while *release* versions does not.
-You can store multiple versions of your report.
-
+  
 - **Vulnerability Templates:** Vulnerability templates are managed using a [separate repository](/doc/vulnerability-templates/).
 This allows other external tools to introduce these templates too.
 These templates are used to derive basic information for your found vulnerabilities.

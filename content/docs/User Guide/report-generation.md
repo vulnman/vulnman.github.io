@@ -46,3 +46,6 @@ If you add new vulnerabilities or edit the management summary, you need to creat
 
 After the report is created, you can click the download button to receive the generated PDF report.
 
+Report releases can have different *types*.
+The `draft` contains a watermark which indicates, that this report is actually a draft report.
+The `release` does not have a watermark.
