@@ -25,4 +25,4 @@ The documentation mainly focuses on the following sections:
 - [Contribute to vulnman](/docs/contribution-guidelines/)
 
 
-If you want to improve the documentation, have a look at the [[Improve Documentation]] page.
+If you want to improve the documentation, have a look at the [Improve Documentation](/docs/contribution-guidelines/how-to-edit-the-documentation/) page.

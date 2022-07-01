@@ -55,19 +55,3 @@ It is important to know, that you need permissions to do so. By default, the pro
 
 Here you can create new reports or download existing one.
 You can write the management summary here.
-
-
-## Reporting
-This page allows you to manage your project's reports.
-
-![Report Management Page](/attachments/reporting-ui.png)
-
-A general draft report can be created. This report will not have a named, unchangable version.
-If you click on the `Create Draft` button, it will create, and overwrite the previous, report.
-
-If you need a new persisted version of your reports, you must click on `Create Report`.
-This will open a new window, where you can choose between the report types "Release" and "Draft".
-This version will not be overwritten by other reports.
-
-The management summary fields `Evaluation` and `Recommendation` supports markdown syntax.
-If your cursor leaves the focus of the field, the data is saved into the database and will appear in your next reports.

@@ -13,7 +13,7 @@ Permissions may not be enforced everywhere at the moment!
 </div>
 
 Vulnman comes with the following default groups and permission levels:
-l
+
 
 ## Groups
 `Management`
@@ -25,6 +25,10 @@ The management is allowed to create and update projects.
 This will add permissions to the user to change, delete and view the project and its assets.
 Pentesters do not have permissions to add contributors to projects (except of the project creator).
 Editing clients is forbidden too.
+
+`Vendors`
+:   A vendor is allowed to use the [Responsible Disclosure](/docs/user-guide/responsible-disclosure-application-usage/)
+application. The vendor is allowed to comment on shared vulnerabilities.
 
 
 ## Project Contributor Roles
