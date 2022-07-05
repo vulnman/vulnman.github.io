@@ -17,6 +17,36 @@ You should <b>not</b> use it in production, because there may be breaking change
 Welcome to the vulnman installation guide! This guide will walk you through
 the process of installing vulnman.
 
+
+
+
+## With Docker
+
+Adjust the credentials and paths in the [docker-compose.yml](https://github.com/vulnman/vulnman/blob/main/docker-compose.yml) file.
+
+```bash
+wget https://raw.githubusercontent.com/vulnman/vulnman/main/docker-compose.yml
+```
+
+**Note:** The main branch is used for development and is not considered production-ready. 
+You may want to fetch the `docker-compose.yml` file from the latest [release](https://github.com/vulnman/vulnman/releases).
+
+To create the initial `local_settings.py` file, you have to start the `vulnman-web` container before the others.
+This step is needed only once.
+
+```bash
+sudo docker-compose up vulnman-web
+```
+
+You may want to stop the container and [adjust the settings](/docs/getting-started/configuration).
+
+To start all containers run the following command.
+
+```bash
+sudo docker-compose up
+```
+
+
 ## Without Docker
 
 ### Requirements
@@ -126,45 +156,3 @@ python manage.py update_checklists
 ```
 
 *Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.*
-
-
-## With Docker
-
-Adjust the credentials and paths in the [docker-compose.yml](https://github.com/vulnman/vulnman/blob/main/docker-compose.yml) file.
-
-For the docker image to work, you need to set up vulnman to use a [postgres database](/docs/getting-started/configuration/#postgresql).
-
-To make the report generation work, add the following line to your `local_settings.py` file:
-
-```
-CELERY_BROKER_URL = "redis://redis:6379"
-```
-
-A basic settings example for the docker setup is shown below:
-
-```
-CELERY_BROKER_URL = "redis://redis:6379"
-
-
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'HOST': 'db',
-    'NAME': 'vulnman',
-    'USER': 'vulnman_db_user',
-    'PASSWORD': 'dontusethispassword',
-  }
-}
-
-ALLOWED_HOSTS = ["vulnman-web"]
-# Add your host and schema here: ["https://mydomain.com", "http://mydomain.com"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost", "https://localhost"]
-```
-
-An example nginx config file can be found [here](https://github.com/vulnman/vulnman/blob/main/docker/nginx.conf).
-
-You can start all containers with the following command:
-
-```bash
-sudo docker-compose up
-```

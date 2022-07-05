@@ -43,3 +43,20 @@ If this file exists, the stylesheets are automatically used in your report templ
 
 ## Template Context
 You have the full power of the django templating engine in your report template.
+
+
+## Translations
+Translation files are located in `resources/locale`.
+
+To create the required text files, run the following command:
+
+```bash
+cd resources/
+django-admin makemessages -l de -i "venv*" -i "apps*" -i "api*" -i "core*" -i "default*"
+```
+Replace *de* with your language code.
+You can now edit the `django.po` file. If you are done, you need to run the following command:
+
+```
+django-admin compilemessages
+```
