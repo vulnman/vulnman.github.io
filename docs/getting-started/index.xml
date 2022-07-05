@@ -95,7 +95,18 @@ You should &lt;b>not&lt;/b> use it in production, because there may be breaking 
 &lt;/div>
 &lt;p>Welcome to the vulnman installation guide! This guide will walk you through
 the process of installing vulnman.&lt;/p>
-&lt;h2 id="without-docker">Without Docker&lt;/h2>
+&lt;h2 id="with-docker">With Docker&lt;/h2>
+&lt;p>Adjust the credentials and paths in the &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker-compose.yml">docker-compose.yml&lt;/a> file.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/vulnman/vulnman/main/docker-compose.yml
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Note:&lt;/strong> The main branch is used for development and is not considered production-ready.
+You may want to fetch the &lt;code>docker-compose.yml&lt;/code> file from the latest &lt;a href="https://github.com/vulnman/vulnman/releases">release&lt;/a>.&lt;/p>
+&lt;p>To create the initial &lt;code>local_settings.py&lt;/code> file, you have to start the &lt;code>vulnman-web&lt;/code> container before the others.
+This step is needed only once.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up vulnman-web
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to stop the container and &lt;a href="https://vulnman.github.io/docs/getting-started/configuration">adjust the settings&lt;/a>.&lt;/p>
+&lt;p>To start all containers run the following command.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="without-docker">Without Docker&lt;/h2>
 &lt;h3 id="requirements">Requirements&lt;/h3>
 &lt;h4 id="fedora">Fedora&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dnf install python3 nginx git
@@ -156,30 +167,7 @@ proxy_pass http://127.0.0.1:8000;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.&lt;/em>&lt;/p>
 &lt;h4 id="import-checklists">Import Checklists&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py update_checklists
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.&lt;/em>&lt;/p>
-&lt;h2 id="with-docker">With Docker&lt;/h2>
-&lt;p>Adjust the credentials and paths in the &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker-compose.yml">docker-compose.yml&lt;/a> file.&lt;/p>
-&lt;p>For the docker image to work, you need to set up vulnman to use a &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/#postgresql">postgres database&lt;/a>.&lt;/p>
-&lt;p>To make the report generation work, add the following line to your &lt;code>local_settings.py&lt;/code> file:&lt;/p>
-&lt;pre>&lt;code>CELERY_BROKER_URL = &amp;quot;redis://redis:6379&amp;quot;
-&lt;/code>&lt;/pre>&lt;p>A basic settings example for the docker setup is shown below:&lt;/p>
-&lt;pre>&lt;code>CELERY_BROKER_URL = &amp;quot;redis://redis:6379&amp;quot;
-DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.postgresql',
-'HOST': 'db',
-'NAME': 'vulnman',
-'USER': 'vulnman_db_user',
-'PASSWORD': 'dontusethispassword',
-}
-}
-ALLOWED_HOSTS = [&amp;quot;vulnman-web&amp;quot;]
-# Add your host and schema here: [&amp;quot;https://mydomain.com&amp;quot;, &amp;quot;http://mydomain.com&amp;quot;]
-CSRF_TRUSTED_ORIGINS = [&amp;quot;http://localhost&amp;quot;, &amp;quot;https://localhost&amp;quot;]
-&lt;/code>&lt;/pre>&lt;p>An example nginx config file can be found &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker/nginx.conf">here&lt;/a>.&lt;/p>
-&lt;p>You can start all containers with the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.&lt;/em>&lt;/p></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
 &lt;h2 id="database">Database&lt;/h2>
 &lt;h3 id="postgresql">PostgreSQL&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
