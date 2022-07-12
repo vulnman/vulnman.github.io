@@ -59,7 +59,7 @@ application. The vendor is allowed to comment on shared vulnerabilities.&lt;/dd>
 &lt;dd>Pentesters are allowed to edit project related objects.&lt;/dd>
 &lt;/dl></description></item><item><title>Docs: Custom Report Templates</title><link>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</guid><description>
 &lt;p>In the vulnman server&amp;rsquo;s &lt;code>resources/templates/report_templates&lt;/code> directory, create a new directory with the name of your template.&lt;/p>
-&lt;pre>&lt;code>mkdir testreport
+&lt;pre>&lt;code>mkdir -p resources/templates/report_templates/testreport
 &lt;/code>&lt;/pre>&lt;p>You need at least two files in this directory:&lt;/p>
 &lt;ol>
 &lt;li>&lt;code>report.html&lt;/code>: The Entrypoint (or whole) HTML report&lt;/li>
@@ -90,7 +90,17 @@ django-admin makemessages -l de -i &lt;span style="color:#4e9a06">&amp;#34;venv*
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;em>de&lt;/em> with your language code.
 You can now edit the &lt;code>django.po&lt;/code> file. If you are done, you need to run the following command:&lt;/p>
 &lt;pre>&lt;code>django-admin compilemessages
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Checklists</title><link>https://vulnman.github.io/docs/advanced-topics/checklists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/checklists/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Custom Advisory Templates</title><link>https://vulnman.github.io/docs/advanced-topics/custom_advisory_templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/custom_advisory_templates/</guid><description>
+&lt;p>In the vulnman server&amp;rsquo;s &lt;code>resources/templates/advisory_templates&lt;/code> directory, create a new file with the name of your template.&lt;/p>
+&lt;pre>&lt;code>mkdir -p resources/templates/advisory_templates
+touch mycooladvisory.md
+&lt;/code>&lt;/pre>&lt;h2 id="use-the-template">Use the template&lt;/h2>
+&lt;p>Add the following line to your &lt;code>local_settings.py&lt;/code> file.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">RD_ADVISORY_TEMPLATES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;mycooladvisory&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;My Cool Advisory&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Checklists</title><link>https://vulnman.github.io/docs/advanced-topics/checklists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/checklists/</guid><description>
 &lt;p>Vulnman provides a simple task management application.
 The tasks can be imported from files and are created depending on which assets you test.&lt;/p>
 &lt;p>Since my current focus is on the core modules, the current checklists are minimalistic and really incomplete.&lt;/p>
