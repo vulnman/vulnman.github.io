@@ -9,7 +9,7 @@ weight: 25
 In the vulnman server's `resources/templates/report_templates` directory, create a new directory with the name of your template.
 
 ```
-mkdir testreport
+mkdir -p resources/templates/report_templates/testreport
 ```
 
 You need at least two files in this directory:
