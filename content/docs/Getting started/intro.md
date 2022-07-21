@@ -86,6 +86,32 @@ You should <b>not</b> use it in production, because there may be breaking change
   </div>
 </div>
 
+<hr>
+
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-xs-12">
+    <h3>Responsible Disclosure</h3>
+    <p>
+      Vulnman integrates features to support bug hunters during the responsible disclosure process.
+        Share vulnerabilities discovered in third party software to their vendor, export advisories and more.
+    </p>
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-12">
+    <h3>Multi Language Support</h3>
+    <p>
+      By default, vulnmans report and vulnerabilities are tracked in english.
+      However, you can easily configure it to use your language.
+    </p>
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-12">
+    <h3>REST-API</h3>
+    <p>
+      The REST-API is work in progress!
+    </p>
+  </div>
+</div>
+
+
 
 <h2>More information</h2>
 
