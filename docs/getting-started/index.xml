@@ -69,6 +69,29 @@ Never miss a check anymore!
 &lt;/p>
 &lt;/div>
 &lt;/div>
+&lt;hr>
+&lt;div class="row">
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Responsible Disclosure&lt;/h3>
+&lt;p>
+Vulnman integrates features to support bug hunters during the responsible disclosure process.
+Share vulnerabilities discovered in third party software to their vendor, export advisories and more.
+&lt;/p>
+&lt;/div>
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>Multi Language Support&lt;/h3>
+&lt;p>
+By default, vulnmans report and vulnerabilities are tracked in english.
+However, you can easily configure it to use your language.
+&lt;/p>
+&lt;/div>
+&lt;div class="col-lg-4 col-md-4 col-xs-12">
+&lt;h3>REST-API&lt;/h3>
+&lt;p>
+The REST-API is work in progress!
+&lt;/p>
+&lt;/div>
+&lt;/div>
 &lt;h2>More information&lt;/h2>
 &lt;p>
 This page is just a brief introduction to what Vulnman is all about, and many
