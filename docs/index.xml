@@ -234,6 +234,9 @@ proxy_set_header Host $host;
 location /static/ {
 alias /opt/vulnman/static_files/;
 }
+location /uploads/ {
+alias /opt/vulnman/uploads/;
+}
 add_header X-XSS-Protection '1; mode=block';
 add_header Strict-Transport-Security &amp;quot;max-age=31536000; includeSubDomains&amp;quot; always;
 add_header Referer-Policy 'strict-origin';
