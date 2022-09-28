@@ -157,6 +157,10 @@ server {
         alias /opt/vulnman/static_files/;
     }
 
+    location /uploads/ {
+        alias /opt/vulnman/uploads/;
+    }
+
     add_header X-XSS-Protection '1; mode=block';
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     add_header Referer-Policy 'strict-origin';
