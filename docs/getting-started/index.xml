@@ -118,79 +118,107 @@ You should &lt;b>not&lt;/b> use it in production, because there may be breaking 
 &lt;/div>
 &lt;p>Welcome to the vulnman installation guide! This guide will walk you through
 the process of installing vulnman.&lt;/p>
-&lt;h2 id="with-docker">With Docker&lt;/h2>
-&lt;p>Adjust the credentials and paths in the &lt;a href="https://github.com/vulnman/vulnman/blob/main/docker-compose.yml">docker-compose.yml&lt;/a> file.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/vulnman/vulnman/main/docker-compose.yml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Note:&lt;/strong> The main branch is used for development and is not considered production-ready.
-You may want to fetch the &lt;code>docker-compose.yml&lt;/code> file from the latest &lt;a href="https://github.com/vulnman/vulnman/releases">release&lt;/a>.&lt;/p>
-&lt;p>To create the initial &lt;code>local_settings.py&lt;/code> file, you have to start the &lt;code>vulnman-web&lt;/code> container before the others.
-This step is needed only once.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up vulnman-web
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to stop the container and &lt;a href="https://vulnman.github.io/docs/getting-started/configuration">adjust the settings&lt;/a>.&lt;/p>
-&lt;p>To start all containers run the following command.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo docker-compose up
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="without-docker">Without Docker&lt;/h2>
-&lt;h3 id="requirements">Requirements&lt;/h3>
-&lt;h4 id="fedora">Fedora&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo dnf install python3 nginx git
-sudo pip install -r requirements.txt
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="arch-linux">Arch-Linux&lt;/h4>
-&lt;pre>&lt;code>sudo pacman -Sy python nginx git
-sudo pip install -r requirements.txt
-&lt;/code>&lt;/pre>&lt;h3 id="prepare">Prepare&lt;/h3>
-&lt;p>First we fetch the source code.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir /opt/vulnman-server
+&lt;h2 id="install-server">Install Server&lt;/h2>
+&lt;h3 id="create-user">Create User&lt;/h3>
+&lt;p>Since we do not want to run vulnman as root, we create a new user.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">useradd -m vulnman
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-dependencies">Install Dependencies&lt;/h3>
+&lt;h4 id="debian">Debian&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">apt install git python3-pip nginx
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get-code">Get Code&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">cd&lt;/span> /opt
 git clone https://github.com/vulnman/vulnman.git
-&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman-server/vulnman
-cp local_settings.template.py local_settings.py
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-database">Configure Database&lt;/h3>
-&lt;p>The default settings will use a sqlite database.
-If you are fine with this you can continue with this tutorial.
-Otherwise, you may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
-&lt;h3 id="initializing-vulnman">Initializing Vulnman&lt;/h3>
+&lt;span style="color:#204a87">cd&lt;/span> vulnman/
+chown vulnman:vulnman -R .
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-requirements">Install Requirements&lt;/h3>
+&lt;p>Before we start to deploy vulnman, we need to install some dependencies.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pip install -r requirements.txt
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-vulnman">Configure Vulnman&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">su - vulnman
+&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+cp local_settings.template.py vulnman/conf/local_settings.py
+&lt;span style="color:#204a87">exit&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
+&lt;h2 id="setup-database-optionally">Setup Database (optionally)&lt;/h2>
+&lt;p>This is an optional step, which depends on your setup and configuration.
+For example, if you plan to use a &lt;em>sqlite&lt;/em> database, you do not need to do anything from this section.&lt;/p>
+&lt;h3 id="postgresql">PostgreSQL&lt;/h3>
+&lt;p>To Be Done&lt;/p>
+&lt;h2 id="initializing-vulnman">Initializing Vulnman&lt;/h2>
 &lt;p>In the next step, we need to initialize vulnman.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py migrate
+&lt;pre>&lt;code>su - vulnman
+cd /opt/vulnman
+python manage.py migrate
 python manage.py collectstatic
 python manage.py createupseruser
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="systemd-service">Systemd Service&lt;/h3>
+exit
+&lt;/code>&lt;/pre>&lt;h2 id="systemd-service">Systemd Service&lt;/h2>
 &lt;p>If you want to run the vulnman-server using systemd, you can paste the following
 content into the &lt;code>/etc/systemd/system/vulnman-server.service&lt;/code> file.&lt;/p>
 &lt;pre>&lt;code>[Unit]
 Description=vulnman server
 After=network.target
 [Service]
-User=user
-Group=user
-WorkingDirectory=/opt/vulnman-server
+User=vulnman
+Group=vulnman
+WorkingDirectory=/opt/vulnman
 ExecStart=gunicorn --bind 127.0.0.1:8000 vulnman.wsgi
 [Install]
 WantedBy=multi-user.target
 &lt;/code>&lt;/pre>&lt;p>To enable the service on boot and start the vulnman service, you can use the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo systemctl start vulnman-server
-sudo systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="setup-nginx">Setup Nginx&lt;/h3>
-&lt;p>Paste the following content into the &lt;code>/etc/nginx/sites-enabled/vulnman.conf&lt;/code> file&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">systemctl start vulnman-server
+systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the &lt;code>qcluster&lt;/code> which is for example used to create the reports, create a file &lt;code>/etc/systemd/system/vulnman-qcluster.service&lt;/code> file.&lt;/p>
+&lt;pre>&lt;code>[Unit]
+Description=vulnman server
+After=network.target
+[Service]
+User=vulnman
+Group=vulnman
+WorkingDirectory=/opt/vulnman
+ExecStart=python3 manage.py qcluster
+[Install]
+WantedBy=multi-user.target
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">systemctl start vulnman-qcluster
+systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-qcluster
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setup-nginx">Setup Nginx&lt;/h2>
+&lt;p>Paste the following content into the &lt;code>/etc/nginx/conf.d/vulnman.conf&lt;/code> file.
+You may want to further hardening the TLS configuration, which is not part of this guide.&lt;/p>
 &lt;pre>&lt;code>server {
-listen 80;
-return https://$host$request_uri;
+listen 80 default_server;
+server_tokens off;
+return 301 https://$host$request_uri;
 }
 server {
 listen 443 ssl;
-ssl_certificate_key /etc/ssl/your_cert.key;
-ssl_certificate /etc/ssl/your_cert.crt;
+server_name _;
+server_tokens off;
+ssl_certificate /etc/ssl/yourcert.crt;
+ssl_certificate_key /etc/ssl/yourcertkey.key;
 ssl_protocols TLSv1.3;
+ssl_prefer_server_ciphers on;
+ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
 location / {
 proxy_pass http://127.0.0.1:8000;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host $host;
 }
+location /static/ {
+alias /opt/vulnman/static_files/;
 }
-&lt;/code>&lt;/pre>&lt;h3 id="checklists-and-vulnerability-templates">Checklists and Vulnerability Templates&lt;/h3>
-&lt;p>After you have installed vulnman you may want to import the default vulnerability templates and checklist.&lt;/p>
-&lt;h4 id="import-vulnerability-templates">Import Vulnerability Templates&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py update_vulnerability_templates
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.&lt;/em>&lt;/p>
-&lt;h4 id="import-checklists">Import Checklists&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">python manage.py update_checklists
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.&lt;/em>&lt;/p></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
+add_header X-XSS-Protection '1; mode=block';
+add_header Strict-Transport-Security &amp;quot;max-age=31536000; includeSubDomains&amp;quot; always;
+add_header Referer-Policy 'strict-origin';
+add_header X-Frame-Options 'SAMEORIGIN';
+add_header X-Content-Type-Options 'nosniff';
+}
+&lt;/code>&lt;/pre>&lt;h2 id="import-default-templates-optionally">Import Default Templates (optionally)&lt;/h2>
+&lt;p>If you want to use our (currently quite small) default templates, run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">su - vulnman
+&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+python3 manage.py import_vulnerability_templates vulnman_default_templates
+&lt;span style="color:#204a87">exit&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
 &lt;h2 id="database">Database&lt;/h2>
 &lt;h3 id="postgresql">PostgreSQL&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
