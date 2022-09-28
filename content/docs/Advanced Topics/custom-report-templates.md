@@ -6,32 +6,26 @@ linkTitle: "Custom Report Templates"
 weight: 25
 ---
 
-In the vulnman server's `resources/templates/report_templates` directory, create a new directory with the name of your template.
+You can deploy your own report templates using a python package.
 
-```
-mkdir -p resources/templates/report_templates/testreport
-```
-
-You need at least two files in this directory:
-
-1. `report.html`: The Entrypoint (or whole) HTML report
-2. `exported_vulnerability.html`: This file is used to export a single vulnerability
-
-**Note: instead of starting from scratch, you may want to copy the default's template directory and customize it.**
+The [default templates repository](https://github.com/vulnman/default-templates) contains a full example of the layout of such a package.
 
 
 ## Enable Report Template
 To enable to the report template, add the following lines to your local_settings.py file.
 
 ```python
+
+# Report Templates
 REPORT_TEMPLATES = {
-    "default": {
-        "CSS": ["css/fontawesome.min.css", "css/codehilite.css"]
-    },
-    "testreport": {
-        "CSS": []
-    }
+    "default": 'vulnman_default_templates.report_templates.default_template',
+    "my_report": 'my_package.report_templates.my_report'
 }
+
+
+ADDITIONAL_PACKAGES = [
+    "my_package"
+]
 ```
 The setting above enables both, the default template and your custom one.
 
@@ -46,13 +40,12 @@ You have the full power of the django templating engine in your report template.
 
 
 ## Translations
-Translation files are located in `resources/locale`.
+Translation files are located in `locale` directory.
 
 To create the required text files, run the following command:
 
 ```bash
-cd resources/
-django-admin makemessages -l de -i "venv*" -i "apps*" -i "api*" -i "core*" -i "default*"
+django-admin makemessages -l de -i "venv*" -i "build*" -i "dist*" -i "my_package.egg-info*"
 ```
 Replace *de* with your language code.
 You can now edit the `django.po` file. If you are done, you need to run the following command:

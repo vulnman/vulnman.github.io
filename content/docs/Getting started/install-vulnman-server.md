@@ -17,80 +17,65 @@ You should <b>not</b> use it in production, because there may be breaking change
 Welcome to the vulnman installation guide! This guide will walk you through
 the process of installing vulnman.
 
+## Install Server
 
-
-
-## With Docker
-
-Adjust the credentials and paths in the [docker-compose.yml](https://github.com/vulnman/vulnman/blob/main/docker-compose.yml) file.
-
+### Create User
+Since we do not want to run vulnman as root, we create a new user.
 ```bash
-wget https://raw.githubusercontent.com/vulnman/vulnman/main/docker-compose.yml
+useradd -m vulnman
 ```
 
-**Note:** The main branch is used for development and is not considered production-ready. 
-You may want to fetch the `docker-compose.yml` file from the latest [release](https://github.com/vulnman/vulnman/releases).
+### Install Dependencies
 
-To create the initial `local_settings.py` file, you have to start the `vulnman-web` container before the others.
-This step is needed only once.
-
+#### Debian
 ```bash
-sudo docker-compose up vulnman-web
+apt install git python3-pip nginx
 ```
 
-You may want to stop the container and [adjust the settings](/docs/getting-started/configuration).
-
-To start all containers run the following command.
-
+### Get Code
 ```bash
-sudo docker-compose up
-```
-
-
-## Without Docker
-
-### Requirements
-
-#### Fedora
-```bash
-sudo dnf install python3 nginx git
-sudo pip install -r requirements.txt
-```
-
-#### Arch-Linux
-
-```
-sudo pacman -Sy python nginx git
-sudo pip install -r requirements.txt
-```
-
-### Prepare
-First we fetch the source code.
-
-```bash
-mkdir /opt/vulnman-server
+cd /opt
 git clone https://github.com/vulnman/vulnman.git
-cd /opt/vulnman-server/vulnman
-cp local_settings.template.py local_settings.py
+cd vulnman/
+chown vulnman:vulnman -R .
 ```
 
+### Install Requirements
+Before we start to deploy vulnman, we need to install some dependencies.
+```bash
+pip install -r requirements.txt
+```
 
-### Configure Database
-The default settings will use a sqlite database.
-If you are fine with this you can continue with this tutorial.
-Otherwise, you may want to read how to [configure](/docs/getting-started/configuration/) your installation.
+## Configure Vulnman
+```bash
+su - vulnman
+cd /opt/vulnman
+cp local_settings.template.py vulnman/conf/local_settings.py
+exit
+```
+You may want to read how to [configure](/docs/getting-started/configuration/) your installation.
 
 
-### Initializing Vulnman
+## Setup Database (optionally)
+This is an optional step, which depends on your setup and configuration.
+For example, if you plan to use a *sqlite* database, you do not need to do anything from this section.
+
+### PostgreSQL
+To Be Done
+
+## Initializing Vulnman
 In the next step, we need to initialize vulnman.
 
-```bash
+```
+su - vulnman
+cd /opt/vulnman
 python manage.py migrate
 python manage.py collectstatic
 python manage.py createupseruser
+exit
 ```
 
-### Systemd Service
+## Systemd Service
 If you want to run the vulnman-server using systemd, you can paste the following
 content into the `/etc/systemd/system/vulnman-server.service` file.
 
@@ -100,9 +85,9 @@ Description=vulnman server
 After=network.target
 
 [Service]
-User=user
-Group=user
-WorkingDirectory=/opt/vulnman-server
+User=vulnman
+Group=vulnman
+WorkingDirectory=/opt/vulnman
 ExecStart=gunicorn --bind 127.0.0.1:8000 vulnman.wsgi
 
 [Install]
@@ -112,47 +97,80 @@ WantedBy=multi-user.target
 To enable the service on boot and start the vulnman service, you can use the following commands:
 
 ```bash
-sudo systemctl start vulnman-server
-sudo systemctl enable vulnman-server
+systemctl start vulnman-server
+systemctl enable vulnman-server
 ```
 
-### Setup Nginx
+For the `qcluster` which is for example used to create the reports, create a file `/etc/systemd/system/vulnman-qcluster.service` file.
 
-Paste the following content into the `/etc/nginx/sites-enabled/vulnman.conf` file
+```
+[Unit]
+Description=vulnman server
+After=network.target
+
+[Service]
+User=vulnman
+Group=vulnman
+WorkingDirectory=/opt/vulnman
+ExecStart=python3 manage.py qcluster
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+systemctl start vulnman-qcluster
+systemctl enable vulnman-qcluster
+```
+
+
+## Setup Nginx
+
+Paste the following content into the `/etc/nginx/conf.d/vulnman.conf` file.
+You may want to further hardening the TLS configuration, which is not part of this guide.
 
 ```
 server {
-    listen 80;
-    return https://$host$request_uri;
+    listen 80 default_server;
+    server_tokens off;
+    return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-    ssl_certificate_key /etc/ssl/your_cert.key;
-    ssl_certificate /etc/ssl/your_cert.crt;
+    server_name _;
+    server_tokens off;
+
+    ssl_certificate /etc/ssl/yourcert.crt;
+    ssl_certificate_key /etc/ssl/yourcertkey.key;
+
     ssl_protocols TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
 
     location / {
         proxy_pass http://127.0.0.1:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header Host $host;
     }
+    location /static/ {
+        alias /opt/vulnman/static_files/;
+    }
+
+    add_header X-XSS-Protection '1; mode=block';
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header Referer-Policy 'strict-origin';
+    add_header X-Frame-Options 'SAMEORIGIN';
+    add_header X-Content-Type-Options 'nosniff';
 }
 ```
 
+## Import Default Templates (optionally)
+If you want to use our (currently quite small) default templates, run the following command:
 
-
-### Checklists and Vulnerability Templates
-After you have installed vulnman you may want to import the default vulnerability templates and checklist.
-
-#### Import Vulnerability Templates
 ```bash
-python manage.py update_vulnerability_templates
+su - vulnman
+cd /opt/vulnman
+python3 manage.py import_vulnerability_templates vulnman_default_templates
+exit
 ```
-
-*Note: If you want to get automatic updates for vulnerability templates. You may want to create a cronjob for the command above.*
-
-#### Import Checklists
-```bash
-python manage.py update_checklists
-```
-
-*Note: If you want to get automatic updates for the checklists. You may want to create a cronjob for the command above.*
