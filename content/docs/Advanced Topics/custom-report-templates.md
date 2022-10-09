@@ -9,7 +9,7 @@ weight: 25
 You can deploy your own report templates using a python package.
 
 The [default templates repository](https://github.com/vulnman/default-templates) contains a full example of the layout of such a package.
-
+It should be noted, that the default report template is quite minimalistic, because you may use a custom one anyway.
 
 ## Enable Report Template
 To enable to the report template, add the following lines to your local_settings.py file.

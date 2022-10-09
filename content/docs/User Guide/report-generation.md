@@ -10,7 +10,7 @@ weight: 5
 The reports in vulnman are generated from templates.
 
 A simple default template is included, but you may want to [customize](/docs/advanced-topics/report-templates/) it to make it yours.
-
+The default template is quite minimalistic, since in most cases a custom one would be used anyway.
 
 ## Report List
 You can have multiple reports for your projects, in case your customer wants to have for example an english, and a german report.
