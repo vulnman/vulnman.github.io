@@ -1,1 +1,18 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – New Releases</title><link>https://vulnman.github.io/blog/releases/</link><description>Recent content in New Releases on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/blog/releases/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – New Releases</title><link>https://vulnman.github.io/blog/releases/</link><description>Recent content in New Releases on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/blog/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: First Release Candidate for v0.4.0 is ready.</title><link>https://vulnman.github.io/blog/2022/10/09/first-release-candidate-for-v0.4.0-is-ready./</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/blog/2022/10/09/first-release-candidate-for-v0.4.0-is-ready./</guid><description>
+&lt;p>It&amp;rsquo;s been a while since there have been any updates on vulnman.
+Here is the first release candidate for v0.4.0.&lt;/p>
+&lt;p>There were many changes and the following list is just a small summary what is coming in the new release:&lt;/p>
+&lt;ul>
+&lt;li>Users can delete their accounts.&lt;/li>
+&lt;li>many UI improvements (hopefully)&lt;/li>
+&lt;li>rewritten handling of vulnerability scoring, which adds a new score for the &lt;code>OWASP Risk Rating&lt;/code>.&lt;/li>
+&lt;li>deleting and editing report versions&lt;/li>
+&lt;li>Fix: 403 Forbidden when trying to create a new log entry in the BugHunting application.&lt;/li>
+&lt;li>Rewritten report generator to be fully customizable with a bit of Python and web dev skills.&lt;/li>
+&lt;li>Customers can be invited to vulnman and invited to projects.&lt;/li>
+&lt;li>Users can reset their password&lt;/li>
+&lt;li>Primary development migrated to Gitea. However, Github remains active for the time being.&lt;/li>
+&lt;li>drop official docker support!&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;p>Happy testing!&lt;/p></description></item></channel></rss>

@@ -30,25 +30,19 @@ This can be done with pip.&lt;/p>
 &lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;mail&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Permissions in Vulnman</title><link>https://vulnman.github.io/docs/advanced-topics/permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/permissions/</guid><description>
-&lt;div class="alert alert-warning">
-&lt;strong>Note:&lt;/strong> This is work in progress
-For example, the "Management" group does not yet have a independed UI.
-Permissions may not be enforced everywhere at the moment!
-&lt;/div>
-&lt;p>Vulnman comes with the following default groups and permission levels:&lt;/p>
-&lt;h2 id="groups">Groups&lt;/h2>
+&lt;p>Vulnman comes with the following default roles and permission levels:&lt;/p>
+&lt;h2 id="roles">Roles&lt;/h2>
 &lt;dl>
-&lt;dt>&lt;code>Management&lt;/code>&lt;/dt>
-&lt;dd>The management group members are allowed to list projects and clients.
-The management is allowed to create and update projects.&lt;/dd>
 &lt;dt>&lt;code>Pentesters&lt;/code>&lt;/dt>
 &lt;dd>The members of the pentester group can be added to different projects.
 This will add permissions to the user to change, delete and view the project and its assets.
 Pentesters do not have permissions to add contributors to projects (except of the project creator).
-Editing clients is forbidden too.&lt;/dd>
+Pentesters are allowed to create new clients and create and invite their employees.&lt;/dd>
 &lt;dt>&lt;code>Vendors&lt;/code>&lt;/dt>
 &lt;dd>A vendor is allowed to use the &lt;a href="https://vulnman.github.io/docs/user-guide/responsible-disclosure-application-usage/">Responsible Disclosure&lt;/a>
 application. The vendor is allowed to comment on shared vulnerabilities.&lt;/dd>
+&lt;dt>&lt;code>Customers&lt;/code>&lt;/dt>
+&lt;dd>Customers are low privilged users. They can be added to projects.&lt;/dd>
 &lt;/dl>
 &lt;h2 id="project-contributor-roles">Project Contributor Roles&lt;/h2>
 &lt;p>If a new contributor is added to a project the following roles are available.&lt;/p>
@@ -59,7 +53,8 @@ application. The vendor is allowed to comment on shared vulnerabilities.&lt;/dd>
 &lt;dd>Pentesters are allowed to edit project related objects.&lt;/dd>
 &lt;/dl></description></item><item><title>Docs: Custom Report Templates</title><link>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</guid><description>
 &lt;p>You can deploy your own report templates using a python package.&lt;/p>
-&lt;p>The &lt;a href="https://github.com/vulnman/default-templates">default templates repository&lt;/a> contains a full example of the layout of such a package.&lt;/p>
+&lt;p>The &lt;a href="https://github.com/vulnman/default-templates">default templates repository&lt;/a> contains a full example of the layout of such a package.
+It should be noted, that the default report template is quite minimalistic, because you may use a custom one anyway.&lt;/p>
 &lt;h2 id="enable-report-template">Enable Report Template&lt;/h2>
 &lt;p>To enable to the report template, add the following lines to your local_settings.py file.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">

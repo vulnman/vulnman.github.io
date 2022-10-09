@@ -28,7 +28,8 @@ It is important to know, that you need permissions to do so. By default, the pro
 &lt;p>Here you can create new reports or download existing one.
 You can write the management summary here.&lt;/p></description></item><item><title>Docs: Generate Reports</title><link>https://vulnman.github.io/docs/user-guide/report-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/report-generation/</guid><description>
 &lt;p>The reports in vulnman are generated from templates.&lt;/p>
-&lt;p>A simple default template is included, but you may want to &lt;a href="https://vulnman.github.io/docs/advanced-topics/report-templates/">customize&lt;/a> it to make it yours.&lt;/p>
+&lt;p>A simple default template is included, but you may want to &lt;a href="https://vulnman.github.io/docs/advanced-topics/report-templates/">customize&lt;/a> it to make it yours.
+The default template is quite minimalistic, since in most cases a custom one would be used anyway.&lt;/p>
 &lt;h2 id="report-list">Report List&lt;/h2>
 &lt;p>You can have multiple reports for your projects, in case your customer wants to have for example an english, and a german report.&lt;/p>
 &lt;p>&lt;img src="https://vulnman.github.io/attachments/project-report-list.png" alt="Project Reports">&lt;/p>

@@ -233,5 +233,11 @@ python3 manage.py import_vulnerability_templates vulnman_default_templates
 &lt;span style="color:#4e9a06">&amp;#39;PASSWORD&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;dontusethispassword&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Updating Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/updating/</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/updating/</guid><description>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+git pull
+pip install -r requirements.txt
+python3 manage.py migrate
+python3 manage.py collectstatic
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
 &lt;p>To Be Done&lt;/p></description></item></channel></rss>
