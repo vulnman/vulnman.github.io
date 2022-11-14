@@ -164,24 +164,24 @@ the process of installing vulnman.&lt;/p>
 &lt;h2 id="install-server">Install Server&lt;/h2>
 &lt;h3 id="create-user">Create User&lt;/h3>
 &lt;p>Since we do not want to run vulnman as root, we create a new user.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">useradd -m vulnman
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-dependencies">Install Dependencies&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -m vulnman
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-dependencies">Install Dependencies&lt;/h3>
 &lt;h4 id="debian">Debian&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">apt install git python3-pip nginx
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get-code">Get Code&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">cd&lt;/span> /opt
-git clone https://github.com/vulnman/vulnman.git
-&lt;span style="color:#204a87">cd&lt;/span> vulnman/
-chown vulnman:vulnman -R .
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-requirements">Install Requirements&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>apt install git python3-pip nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get-code">Get Code&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/vulnman/vulnman.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> vulnman/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown vulnman:vulnman -R .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-requirements">Install Requirements&lt;/h3>
 &lt;p>Before we start to deploy vulnman, we need to install some dependencies.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pip install -r requirements.txt
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-vulnman">Configure Vulnman&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">su - vulnman
-&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
-cp local_settings.template.py vulnman/conf/local_settings.py
-&lt;span style="color:#204a87">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-vulnman">Configure Vulnman&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp local_settings.template.py vulnman/conf/local_settings.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
 &lt;h2 id="setup-database-optionally">Setup Database (optionally)&lt;/h2>
 &lt;p>This is an optional step, which depends on your setup and configuration.
 For example, if you plan to use a &lt;em>sqlite&lt;/em> database, you do not need to do anything from this section.&lt;/p>
@@ -189,7 +189,7 @@ For example, if you plan to use a &lt;em>sqlite&lt;/em> database, you do not nee
 &lt;p>To Be Done&lt;/p>
 &lt;h2 id="initializing-vulnman">Initializing Vulnman&lt;/h2>
 &lt;p>In the next step, we need to initialize vulnman.&lt;/p>
-&lt;pre>&lt;code>su - vulnman
+&lt;pre tabindex="0">&lt;code>su - vulnman
 cd /opt/vulnman
 python manage.py migrate
 python manage.py collectstatic
@@ -198,7 +198,7 @@ exit
 &lt;/code>&lt;/pre>&lt;h2 id="systemd-service">Systemd Service&lt;/h2>
 &lt;p>If you want to run the vulnman-server using systemd, you can paste the following
 content into the &lt;code>/etc/systemd/system/vulnman-server.service&lt;/code> file.&lt;/p>
-&lt;pre>&lt;code>[Unit]
+&lt;pre tabindex="0">&lt;code>[Unit]
 Description=vulnman server
 After=network.target
 [Service]
@@ -209,10 +209,10 @@ ExecStart=gunicorn --bind 127.0.0.1:8000 vulnman.wsgi
 [Install]
 WantedBy=multi-user.target
 &lt;/code>&lt;/pre>&lt;p>To enable the service on boot and start the vulnman service, you can use the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">systemctl start vulnman-server
-systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the &lt;code>qcluster&lt;/code> which is for example used to create the reports, create a file &lt;code>/etc/systemd/system/vulnman-qcluster.service&lt;/code> file.&lt;/p>
-&lt;pre>&lt;code>[Unit]
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl start vulnman-server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the &lt;code>qcluster&lt;/code> which is for example used to create the reports, create a file &lt;code>/etc/systemd/system/vulnman-qcluster.service&lt;/code> file.&lt;/p>
+&lt;pre tabindex="0">&lt;code>[Unit]
 Description=vulnman server
 After=network.target
 [Service]
@@ -222,12 +222,12 @@ WorkingDirectory=/opt/vulnman
 ExecStart=python3 manage.py qcluster
 [Install]
 WantedBy=multi-user.target
-&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">systemctl start vulnman-qcluster
-systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-qcluster
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setup-nginx">Setup Nginx&lt;/h2>
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl start vulnman-qcluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-qcluster
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setup-nginx">Setup Nginx&lt;/h2>
 &lt;p>Paste the following content into the &lt;code>/etc/nginx/conf.d/vulnman.conf&lt;/code> file.
 You may want to further hardening the TLS configuration, which is not part of this guide.&lt;/p>
-&lt;pre>&lt;code>server {
+&lt;pre tabindex="0">&lt;code>server {
 listen 80 default_server;
 server_tokens off;
 return 301 https://$host$request_uri;
@@ -252,19 +252,19 @@ alias /opt/vulnman/static_files/;
 location /uploads/ {
 alias /opt/vulnman/uploads/;
 }
-add_header X-XSS-Protection '1; mode=block';
-add_header Strict-Transport-Security &amp;quot;max-age=31536000; includeSubDomains&amp;quot; always;
-add_header Referer-Policy 'strict-origin';
-add_header X-Frame-Options 'SAMEORIGIN';
-add_header X-Content-Type-Options 'nosniff';
+add_header X-XSS-Protection &amp;#39;1; mode=block&amp;#39;;
+add_header Strict-Transport-Security &amp;#34;max-age=31536000; includeSubDomains&amp;#34; always;
+add_header Referer-Policy &amp;#39;strict-origin&amp;#39;;
+add_header X-Frame-Options &amp;#39;SAMEORIGIN&amp;#39;;
+add_header X-Content-Type-Options &amp;#39;nosniff&amp;#39;;
 }
 &lt;/code>&lt;/pre>&lt;h2 id="import-default-templates-optionally">Import Default Templates (optionally)&lt;/h2>
 &lt;p>If you want to use our (currently quite small) default templates, run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">su - vulnman
-&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
-python3 manage.py import_vulnerability_templates vulnman_default_templates
-&lt;span style="color:#204a87">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Generate Reports</title><link>https://vulnman.github.io/docs/user-guide/report-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/report-generation/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 manage.py import_vulnerability_templates vulnman_default_templates
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Generate Reports</title><link>https://vulnman.github.io/docs/user-guide/report-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/user-guide/report-generation/</guid><description>
 &lt;p>The reports in vulnman are generated from templates.&lt;/p>
 &lt;p>A simple default template is included, but you may want to &lt;a href="https://vulnman.github.io/docs/advanced-topics/report-templates/">customize&lt;/a> it to make it yours.
 The default template is quite minimalistic, since in most cases a custom one would be used anyway.&lt;/p>
@@ -294,47 +294,52 @@ The &lt;code>draft&lt;/code> contains a watermark which indicates, that this rep
 The &lt;code>release&lt;/code> does not have a watermark.&lt;/p></description></item><item><title>Docs: LDAP Authentication</title><link>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/ldap-authentication/</guid><description>
 &lt;p>In the first step, you need to install &lt;code>django-auth-ldap&lt;/code>.
 This can be done with pip.&lt;/p>
-&lt;pre>&lt;code>pip install django-auth-ldap
+&lt;pre tabindex="0">&lt;code>pip install django-auth-ldap
 &lt;/code>&lt;/pre>&lt;h2 id="settings">Settings&lt;/h2>
 &lt;p>Add the following lines to your &lt;a href="https://vulnman.github.io/docs/getting-started/configuration">local_settings.py&lt;/a> file.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># LDAP&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># You need to install `django-auth-ldap` to use LDAP authentication&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># See https://django-auth-ldap.readthedocs.io/en/latest/install.html for library usage&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">ldap&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">django_auth_ldap.config&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_BIND_DN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cn=admin,dc=example,dc=org&amp;#34;&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_BIND_PASSWORD&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;admin&amp;#34;&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_USER_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;ou=Users,dc=example,dc=org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(uid=&lt;/span>&lt;span style="color:#4e9a06">%(user)s&lt;/span>&lt;span style="color:#4e9a06">)&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_FIND_GROUP_PERMS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#3465a4">True&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_CACHE_TIMEOUT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_SERVER_URI&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ldap://172.17.0.2&amp;#34;&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_GROUP_TYPE&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">name_attr&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;cn&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_GROUP_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;ou=Groups,dc=example,dc=org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;(objectClass=posixGroup)&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000">AUTH_LDAP_USER_ATTR_MAP&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;first_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;givenName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;last_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;sn&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;mail&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># LDAP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># You need to install `django-auth-ldap` to use LDAP authentication&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># See https://django-auth-ldap.readthedocs.io/en/latest/install.html for library usage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">##############&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">ldap&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">django_auth_ldap.config&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_BIND_DN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cn=admin,dc=example,dc=org&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_BIND_PASSWORD&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;admin&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_USER_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;ou=Users,dc=example,dc=org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(uid=&lt;/span>&lt;span style="color:#4e9a06">%(user)s&lt;/span>&lt;span style="color:#4e9a06">)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_FIND_GROUP_PERMS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_CACHE_TIMEOUT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_SERVER_URI&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ldap://172.17.0.2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_GROUP_TYPE&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">PosixGroupType&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">name_attr&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;cn&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_GROUP_SEARCH&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LDAPSearch&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;ou=Groups,dc=example,dc=org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ldap&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">SCOPE_SUBTREE&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;(objectClass=posixGroup)&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AUTH_LDAP_USER_ATTR_MAP&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;first_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;givenName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;last_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;sn&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;mail&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
 &lt;h2 id="database">Database&lt;/h2>
 &lt;h3 id="postgresql">PostgreSQL&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;ENGINE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;django.db.backends.postgresql&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;db&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;NAME&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_db_user&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;PASSWORD&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;dontusethispassword&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Project Security</title><link>https://vulnman.github.io/docs/contribution-guidelines/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/security/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;ENGINE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;django.db.backends.postgresql&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;db&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;NAME&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_db_user&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;PASSWORD&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;dontusethispassword&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Project Security</title><link>https://vulnman.github.io/docs/contribution-guidelines/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/security/</guid><description>
 &lt;p>This page provides a central hub for topics pertaining to the security of the
 vulnman project.&lt;/p>
 &lt;h2 id="reporting-security-issues-in-vulnman">Reporting security issues in Vulnman&lt;/h2>
@@ -344,29 +349,31 @@ affects vulnman, we will patch it within a reasonable time and release a public
 post that describes the issue,
 discusses the potential impact of the vulnerability, references applicable
 patches or workarounds, and credits the discoverer. Please use this address:&lt;/p>
-&lt;pre>&lt;code>vulnman-project+security at riseup dot net
+&lt;pre tabindex="0">&lt;code>vulnman-project+security at riseup dot net
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Updating Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/updating/</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/updating/</guid><description>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
-git pull
-pip install -r requirements.txt
-python3 manage.py migrate
-python3 manage.py collectstatic
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Custom Report Templates</title><link>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git pull
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 manage.py migrate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 manage.py collectstatic
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Custom Report Templates</title><link>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/custom-report-templates/</guid><description>
 &lt;p>You can deploy your own report templates using a python package.&lt;/p>
 &lt;p>The &lt;a href="https://github.com/vulnman/default-templates">default templates repository&lt;/a> contains a full example of the layout of such a package.
 It should be noted, that the default report template is quite minimalistic, because you may use a custom one anyway.&lt;/p>
 &lt;h2 id="enable-report-template">Enable Report Template&lt;/h2>
 &lt;p>To enable to the report template, add the following lines to your local_settings.py file.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">
-&lt;span style="color:#8f5902;font-style:italic"># Report Templates&lt;/span>
-&lt;span style="color:#000">REPORT_TEMPLATES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_default_templates.report_templates.default_template&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;my_report&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;my_package.report_templates.my_report&amp;#39;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000">ADDITIONAL_PACKAGES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;my_package&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The setting above enables both, the default template and your custom one.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Report Templates&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">REPORT_TEMPLATES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_default_templates.report_templates.default_template&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;my_report&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;my_package.report_templates.my_report&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ADDITIONAL_PACKAGES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;my_package&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The setting above enables both, the default template and your custom one.&lt;/p>
 &lt;h2 id="stylesheets">Stylesheets&lt;/h2>
 &lt;p>The report generator will automatically check the existence of the &lt;code>scss/main.scss&lt;/code> file in the report&amp;rsquo;s template directory.
 If this file exists, the stylesheets are automatically used in your report template.&lt;/p>
@@ -375,9 +382,9 @@ If this file exists, the stylesheets are automatically used in your report templ
 &lt;h2 id="translations">Translations&lt;/h2>
 &lt;p>Translation files are located in &lt;code>locale&lt;/code> directory.&lt;/p>
 &lt;p>To create the required text files, run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">django-admin makemessages -l de -i &lt;span style="color:#4e9a06">&amp;#34;venv*&amp;#34;&lt;/span> -i &lt;span style="color:#4e9a06">&amp;#34;build*&amp;#34;&lt;/span> -i &lt;span style="color:#4e9a06">&amp;#34;dist*&amp;#34;&lt;/span> -i &lt;span style="color:#4e9a06">&amp;#34;my_package.egg-info*&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;em>de&lt;/em> with your language code.
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>django-admin makemessages -l de -i &lt;span style="color:#4e9a06">&amp;#34;venv*&amp;#34;&lt;/span> -i &lt;span style="color:#4e9a06">&amp;#34;build*&amp;#34;&lt;/span> -i &lt;span style="color:#4e9a06">&amp;#34;dist*&amp;#34;&lt;/span> -i &lt;span style="color:#4e9a06">&amp;#34;my_package.egg-info*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;em>de&lt;/em> with your language code.
 You can now edit the &lt;code>django.po&lt;/code> file. If you are done, you need to run the following command:&lt;/p>
-&lt;pre>&lt;code>django-admin compilemessages
+&lt;pre tabindex="0">&lt;code>django-admin compilemessages
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
 &lt;p>To Be Done&lt;/p></description></item></channel></rss>

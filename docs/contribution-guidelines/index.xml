@@ -8,7 +8,7 @@ affects vulnman, we will patch it within a reasonable time and release a public
 post that describes the issue,
 discusses the potential impact of the vulnerability, references applicable
 patches or workarounds, and credits the discoverer. Please use this address:&lt;/p>
-&lt;pre>&lt;code>vulnman-project+security at riseup dot net
+&lt;pre tabindex="0">&lt;code>vulnman-project+security at riseup dot net
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Testing Releases</title><link>https://vulnman.github.io/docs/contribution-guidelines/testing-releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/contribution-guidelines/testing-releases/</guid><description>
 &lt;p>Testing new vulnman releases and updates is one of the most helpful ways in
 which you can &lt;a href="https://vulnman.github.io/docs/contribution-guidelines/">contribute&lt;/a> to the vulnman project.&lt;/p>

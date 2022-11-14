@@ -121,24 +121,24 @@ the process of installing vulnman.&lt;/p>
 &lt;h2 id="install-server">Install Server&lt;/h2>
 &lt;h3 id="create-user">Create User&lt;/h3>
 &lt;p>Since we do not want to run vulnman as root, we create a new user.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">useradd -m vulnman
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-dependencies">Install Dependencies&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -m vulnman
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-dependencies">Install Dependencies&lt;/h3>
 &lt;h4 id="debian">Debian&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">apt install git python3-pip nginx
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get-code">Get Code&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">cd&lt;/span> /opt
-git clone https://github.com/vulnman/vulnman.git
-&lt;span style="color:#204a87">cd&lt;/span> vulnman/
-chown vulnman:vulnman -R .
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-requirements">Install Requirements&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>apt install git python3-pip nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get-code">Get Code&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/vulnman/vulnman.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> vulnman/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown vulnman:vulnman -R .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-requirements">Install Requirements&lt;/h3>
 &lt;p>Before we start to deploy vulnman, we need to install some dependencies.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pip install -r requirements.txt
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-vulnman">Configure Vulnman&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">su - vulnman
-&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
-cp local_settings.template.py vulnman/conf/local_settings.py
-&lt;span style="color:#204a87">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-vulnman">Configure Vulnman&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp local_settings.template.py vulnman/conf/local_settings.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to read how to &lt;a href="https://vulnman.github.io/docs/getting-started/configuration/">configure&lt;/a> your installation.&lt;/p>
 &lt;h2 id="setup-database-optionally">Setup Database (optionally)&lt;/h2>
 &lt;p>This is an optional step, which depends on your setup and configuration.
 For example, if you plan to use a &lt;em>sqlite&lt;/em> database, you do not need to do anything from this section.&lt;/p>
@@ -146,7 +146,7 @@ For example, if you plan to use a &lt;em>sqlite&lt;/em> database, you do not nee
 &lt;p>To Be Done&lt;/p>
 &lt;h2 id="initializing-vulnman">Initializing Vulnman&lt;/h2>
 &lt;p>In the next step, we need to initialize vulnman.&lt;/p>
-&lt;pre>&lt;code>su - vulnman
+&lt;pre tabindex="0">&lt;code>su - vulnman
 cd /opt/vulnman
 python manage.py migrate
 python manage.py collectstatic
@@ -155,7 +155,7 @@ exit
 &lt;/code>&lt;/pre>&lt;h2 id="systemd-service">Systemd Service&lt;/h2>
 &lt;p>If you want to run the vulnman-server using systemd, you can paste the following
 content into the &lt;code>/etc/systemd/system/vulnman-server.service&lt;/code> file.&lt;/p>
-&lt;pre>&lt;code>[Unit]
+&lt;pre tabindex="0">&lt;code>[Unit]
 Description=vulnman server
 After=network.target
 [Service]
@@ -166,10 +166,10 @@ ExecStart=gunicorn --bind 127.0.0.1:8000 vulnman.wsgi
 [Install]
 WantedBy=multi-user.target
 &lt;/code>&lt;/pre>&lt;p>To enable the service on boot and start the vulnman service, you can use the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">systemctl start vulnman-server
-systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the &lt;code>qcluster&lt;/code> which is for example used to create the reports, create a file &lt;code>/etc/systemd/system/vulnman-qcluster.service&lt;/code> file.&lt;/p>
-&lt;pre>&lt;code>[Unit]
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl start vulnman-server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the &lt;code>qcluster&lt;/code> which is for example used to create the reports, create a file &lt;code>/etc/systemd/system/vulnman-qcluster.service&lt;/code> file.&lt;/p>
+&lt;pre tabindex="0">&lt;code>[Unit]
 Description=vulnman server
 After=network.target
 [Service]
@@ -179,12 +179,12 @@ WorkingDirectory=/opt/vulnman
 ExecStart=python3 manage.py qcluster
 [Install]
 WantedBy=multi-user.target
-&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">systemctl start vulnman-qcluster
-systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-qcluster
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setup-nginx">Setup Nginx&lt;/h2>
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl start vulnman-qcluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl &lt;span style="color:#204a87">enable&lt;/span> vulnman-qcluster
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setup-nginx">Setup Nginx&lt;/h2>
 &lt;p>Paste the following content into the &lt;code>/etc/nginx/conf.d/vulnman.conf&lt;/code> file.
 You may want to further hardening the TLS configuration, which is not part of this guide.&lt;/p>
-&lt;pre>&lt;code>server {
+&lt;pre tabindex="0">&lt;code>server {
 listen 80 default_server;
 server_tokens off;
 return 301 https://$host$request_uri;
@@ -209,35 +209,35 @@ alias /opt/vulnman/static_files/;
 location /uploads/ {
 alias /opt/vulnman/uploads/;
 }
-add_header X-XSS-Protection '1; mode=block';
-add_header Strict-Transport-Security &amp;quot;max-age=31536000; includeSubDomains&amp;quot; always;
-add_header Referer-Policy 'strict-origin';
-add_header X-Frame-Options 'SAMEORIGIN';
-add_header X-Content-Type-Options 'nosniff';
+add_header X-XSS-Protection &amp;#39;1; mode=block&amp;#39;;
+add_header Strict-Transport-Security &amp;#34;max-age=31536000; includeSubDomains&amp;#34; always;
+add_header Referer-Policy &amp;#39;strict-origin&amp;#39;;
+add_header X-Frame-Options &amp;#39;SAMEORIGIN&amp;#39;;
+add_header X-Content-Type-Options &amp;#39;nosniff&amp;#39;;
 }
 &lt;/code>&lt;/pre>&lt;h2 id="import-default-templates-optionally">Import Default Templates (optionally)&lt;/h2>
 &lt;p>If you want to use our (currently quite small) default templates, run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">su - vulnman
-&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
-python3 manage.py import_vulnerability_templates vulnman_default_templates
-&lt;span style="color:#204a87">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 manage.py import_vulnerability_templates vulnman_default_templates
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://vulnman.github.io/docs/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/configuration/</guid><description>
 &lt;h2 id="database">Database&lt;/h2>
 &lt;h3 id="postgresql">PostgreSQL&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;ENGINE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;django.db.backends.postgresql&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;db&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;NAME&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_db_user&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#39;PASSWORD&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;dontusethispassword&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Updating Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/updating/</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/updating/</guid><description>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
-git pull
-pip install -r requirements.txt
-python3 manage.py migrate
-python3 manage.py collectstatic
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">DATABASES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;ENGINE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;django.db.backends.postgresql&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;db&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;NAME&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;vulnman_db_user&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;PASSWORD&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;dontusethispassword&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Updating Vulnman Server</title><link>https://vulnman.github.io/docs/getting-started/updating/</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/updating/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /opt/vulnman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git pull
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 manage.py migrate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 manage.py collectstatic
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Issue Tracking</title><link>https://vulnman.github.io/docs/getting-started/issue-tracking/</link><pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/getting-started/issue-tracking/</guid><description>
 &lt;p>To Be Done&lt;/p></description></item></channel></rss>
