@@ -22,6 +22,10 @@ application. The vendor is allowed to comment on shared vulnerabilities.
 `Customers`
 :   Customers are low privilged users. They can be added to projects.
 
+`Bughunters`
+:   Bughunters only have permissions to access the [Responsible Disclosure](/docs/user-guide/responsible-disclosure-application-usage/) application and manage vulnerabilities there.
+No permissions to projects are granted.
+
 
 ## Project Contributor Roles
 If a new contributor is added to a project the following roles are available.
