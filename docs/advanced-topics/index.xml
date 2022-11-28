@@ -89,33 +89,7 @@ If this file exists, the stylesheets are automatically used in your report templ
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;em>de&lt;/em> with your language code.
 You can now edit the &lt;code>django.po&lt;/code> file. If you are done, you need to run the following command:&lt;/p>
 &lt;pre tabindex="0">&lt;code>django-admin compilemessages
-&lt;/code>&lt;/pre></description></item><item><title>Docs: Checklists</title><link>https://vulnman.github.io/docs/advanced-topics/checklists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/checklists/</guid><description>
-&lt;p>Vulnman provides a simple task management application.
-The tasks can be imported from files and are created depending on which assets you test.&lt;/p>
-&lt;p>Since my current focus is on the core modules, the current checklists are minimalistic and really incomplete.&lt;/p>
-&lt;p>Feel free to contribute new checklists or improve existing ones.&lt;/p>
-&lt;p>Currently there is little to consider and the creation is very simple.&lt;/p>
-&lt;h2 id="structure-of-checklists">Structure of Checklists&lt;/h2>
-&lt;p>First of all, the default &lt;em>community checklists&lt;/em> repository is located &lt;a href="https://github.com/vulnman/community-checklists">here&lt;/a>.&lt;/p>
-&lt;p>There are 2 required files for a checklist:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>info.yaml&lt;/strong>: Contains meta data information of the checklist&lt;/li>
-&lt;li>&lt;strong>ReadMe.md&lt;/strong>: A description of the test that should be performed. You may want to provide background information.&lt;/li>
-&lt;/ul>
-&lt;h3 id="infoyaml-template">info.yaml template&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">sql-injection&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">SQL-Injection&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">conditions&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">http&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">80&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">service.port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">443&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">webapplication.always&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>id&lt;/code> key needs to be unique, while the &lt;code>name&lt;/code> is just used for display purposes.
-The conditions are used to create the task based on different asset attributes.&lt;/p>
-&lt;p>In the example above, the &lt;code>sql-injection&lt;/code> task is created, if a service with a name of &amp;ldquo;http&amp;rdquo; or &amp;ldquo;https&amp;rdquo;.
-Also if the service port is either 80 or 443.
-You can use the keyword &lt;code>always&lt;/code> to create the task independently of the asset attribute.&lt;/p></description></item><item><title>Docs: Vulnerability Templates</title><link>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Vulnerability Templates</title><link>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/docs/advanced-topics/vulnerability-templates/</guid><description>
 &lt;p>The Vulnman server relies on the existing vulnerability templates.&lt;/p>
 &lt;p>Since my current focus is on the core modules, the current templates are minimalistic and rather unsuitable for meaningful reports.&lt;/p>
 &lt;p>Feel free to contribute new vulnerability templates or improve existing ones.&lt;/p>
