@@ -23,6 +23,7 @@ You should <b>not</b> use it in production, because there may be breaking change
       Vulnman is a free and open-source pentest management and collaboration software.
       Manage your pentest projects and their related assets using the Vulnman web interface.
       Vulnman comes with a simple to use report generator.
+      Once you have created your templates, the pentesters can create new reports with just a few clicks.
       This allows the pentesters to focus on finding vulnerabilities.
     </p>
     <p>
@@ -45,16 +46,16 @@ You should <b>not</b> use it in production, because there may be breaking change
     <h3>Report Generator</h3>
     <p>
       Vulnman contains a simple to use pentest report generator.
-    Never waste your time struggling with Word documents.
+      After you have created your report template(s), you can create new reports with a few clicks.
+      You will never have to struggle with Word documents again.
     </p>
   </div>
   <div class="col-lg-4 col-md-4 col-xs-12">
     <h3>Customizable</h3>
     <p>
-      Vulnman can be customized at multiple places. Some of them are:
-      <a href="/docs/advanced-topics/custom-report-templates/">Report Template</a>,
-      <a href="/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates</a>,
-      <a href="/docs/advanced-topics/checklists/">Checklists</a>
+      Vulnman can be customized at multiple places. Some of them are the
+      <a href="/docs/advanced-topics/custom-report-templates/">Report Template</a> and
+      <a href="/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates</a>.
     </p>
   </div>
 </div>
@@ -73,15 +74,13 @@ You should <b>not</b> use it in production, because there may be breaking change
     <p>
       Vulnman includes simple features to manage vulnerabilities of your projects.
       This includes <a href="/docs/advanced-topics/vulnerability-templates/">Vulnerability Templates</a>
-      and CVSS scoring.
+      and different vulnerability scoring like CVSS.
     </p>
   </div>
   <div class="col-lg-4 col-md-4 col-xs-12">
-    <h3>Checklists and To Dos</h3>
+    <h3>Open-Source</h3>
     <p>
-      Track your tasks during the pentest.
-      Did you already check for SQL-Injection?
-      Never miss a check anymore!
+      Vulnman is fully open-source software. It is free to use.
     </p>
   </div>
 </div>
