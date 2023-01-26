@@ -1,4 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – News About Docsy</title><link>https://vulnman.github.io/blog/news/</link><description>Recent content in News About Docsy on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/blog/news/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Current Development Status</title><link>https://vulnman.github.io/blog/2022/05/26/current-development-status/</link><pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/blog/2022/05/26/current-development-status/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vulnman Project – News About Docsy</title><link>https://vulnman.github.io/blog/news/</link><description>Recent content in News About Docsy on Vulnman Project</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vulnman.github.io/blog/news/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Time to follow the Hype</title><link>https://vulnman.github.io/blog/2023/01/26/time-to-follow-the-hype/</link><pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/blog/2023/01/26/time-to-follow-the-hype/</guid><description>
+&lt;p>There have been no updates and commits for vulnman for some time now.&lt;/p>
+&lt;p>The reason is that the focus was moved to rebuild everything from scratch and follow the hype of modern frontend frameworks like VueJs.
+During last month, I completly rewritten the backend part into a REST-API, learning VueJs and build a - hopefully not so ugly - new frontend.&lt;/p>
+&lt;p>vulnman will be deprecated once the new tool will be available.
+The new version will have more advantages and can be easily integrated into other tools using its REST-API.
+The database schema is a bit more flexible, more code reuse and other improvements in maintance.
+There will be filters, searches and ways to order findings, projects and more, which was not done in original vulnman.&lt;/p>
+&lt;p>But be warned, I am not a developer and certainly not a frontend developer. ;)&lt;/p>
+&lt;p>The next version will be completly free and open source too.&lt;/p>
+&lt;p>If you have ideas for new features, improvements or want to contribute to the new tool before it is going public, feel free to reach out to &lt;code>vulnman-project dot riseup dot net&lt;/code>.&lt;/p></description></item><item><title>Blog: Current Development Status</title><link>https://vulnman.github.io/blog/2022/05/26/current-development-status/</link><pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate><guid>https://vulnman.github.io/blog/2022/05/26/current-development-status/</guid><description>
 &lt;p>This post is intended to give a brief summary of the current development processes and ideas in vulnman.&lt;/p>
 &lt;p>Currently the focus is on implementing and improving the &amp;ldquo;Responsible Disclosure&amp;rdquo; application.
 There have been some bug fixes and UI improvements here.&lt;/p>
